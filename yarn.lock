@@ -1566,6 +1566,12 @@ decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
 
+decomment@^0.9.0:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/decomment/-/decomment-0.9.1.tgz#5bd96c67edc44df71115cfd83712ff04fa6cd0c9"
+  dependencies:
+    esprima "~4.0.0"
+
 deep-extend@~0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
@@ -1879,6 +1885,10 @@ escope@^3.6.0:
     es6-weak-map "^2.0.1"
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
+
+esprima@~4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
 
 esrecurse@^4.1.0:
   version "4.2.0"
@@ -2447,7 +2457,15 @@ gulp-sourcemaps@^2.6.2:
     strip-bom-string "1.X"
     through2 "2.X"
 
-gulp-util@^3, gulp-util@^3.0, gulp-util@^3.0.7:
+gulp-strip-comments@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/gulp-strip-comments/-/gulp-strip-comments-2.5.1.tgz#d4a3e3c23c79f6eb05f475a3602596c9e4da104e"
+  dependencies:
+    decomment "^0.9.0"
+    gulp-util "^3.0.8"
+    through2 "^2.0.3"
+
+gulp-util@^3, gulp-util@^3.0, gulp-util@^3.0.7, gulp-util@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
