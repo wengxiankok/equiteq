@@ -11,11 +11,10 @@
     ],
     "babelrc": false
   },
-  "dependencies": {
-    "gulp": "^4.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0"
+    "gulp": "^4.0.0",
   }
 }
