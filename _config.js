@@ -18,8 +18,8 @@ const sass = {
 const webpack = {
   watch: true,
   entry: {
-    app: `./${paths.source}/${folders.javascript}/index.js`,
-    vendor: `./${paths.source}/${folders.javascript}/vendor.js`
+    app: `./${paths.source}/${folders.javascript}/entry.js`,
+    // vendor: `./${paths.source}/${folders.javascript}/vendor.js`
   },
   output: {
     filename: '[name].js'
