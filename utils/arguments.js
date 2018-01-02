@@ -5,19 +5,20 @@ import log from 'fancy-log';
 const argvs = yargs.argv;
 
 function argvParser(){
-  const env     = argvs.production ? 'production' : 'develop';
-  const pageExt = argvs.php ? 'php' : 'html';
+  const args = {
+    env: argvs.production || argvs.p ? 'production' : 'develop',
+    pageExt: argvs.php ? 'php' : argvs.type ? argvs.type : 'html',
+    quick: argvs.quick || argvs.q
+  };
 
   log( chalk.gray('---------------------') );
   // log environment
-  log(chalk.green(`Current Environment: '${chalk.cyan.bold(env)}'`));
+  log(chalk.green(`Current Environment: '${chalk.cyan.bold(args.env)}'`));
   // log page extension
-  log(chalk.green(`Editing File Type: [${chalk.cyan.bold(pageExt)}]`));
+  log(chalk.green(`Editing File Type: [${chalk.cyan.bold(args.pageExt)}]`));
   log( chalk.gray('---------------------') );
-  return {
-    env: env,
-    pageExt: pageExt
-  };
+
+  return args;
 }
 
 const argv = argvParser();
