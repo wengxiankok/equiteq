@@ -5,10 +5,30 @@ import watcher from './tasks/watcher';
 import server from './tasks/server';
 import scripts from './tasks/scripts';
 
-import styles from './tasks/styles';
+import page from './tasks/page';
 import images from './tasks/images';
+import styles from './tasks/styles';
 import clean  from './tasks/delete';
 
-const devTasks = [ server, watcher, styles, scripts, images ];
+// import config
+import configs from './_config';
 
+// import utilities
+import argv  from './utils/arguments';
+import chalk from 'chalk';
+import log   from 'fancy-log';
+
+const devTasks = [ server, watcher, page, styles, scripts, images ];
 gulp.task('dev', gulp.parallel( devTasks ));
+
+gulp.task('build',
+  gulp.series([clean, set],
+  gulp.parallel([scripts, styles]))
+);
+
+function set(done){
+  configs.webpack.watch = false;
+  done();
+}
+
+gulp.task(page);
