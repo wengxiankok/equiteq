@@ -8,6 +8,7 @@ import sourcemaps   from 'gulp-sourcemaps';
 import configs from './../_config';
 // import utilities
 import argv from './../utils/arguments';
+import size from './../utils/size';
 
 const entry      = `${configs.paths.source}/${configs.folders.sass}/*.scss`;
 const destinaton = `${configs.paths.build}/${configs.folders.stylesheets}`;
@@ -22,6 +23,7 @@ function styles(){
     .pipe( sourcemaps.write({includeContent: false}) )
     .pipe( sourcemaps.init({loadMaps: true}) )
       .pipe( autoprefixer() )
+      .pipe( size() )
     .pipe( sourcemaps.write('.') )
     .pipe( gulp.dest(destinaton) );
 }
