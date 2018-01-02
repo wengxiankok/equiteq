@@ -33,6 +33,7 @@
     "imagemin-pngquant": "^5.0.1",
     "imagemin-svgo": "^6.0.0",
     "map-stream": "^0.0.7",
+    "uglifyjs-webpack-plugin": "^1.1.5",
     "webpack-stream": "^4.0.0",
     "yargs": "^10.0.3"
   }
