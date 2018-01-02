@@ -7,8 +7,8 @@ const entry = configs.ignoreGlob;
 const destination = `${configs.paths.build}`;
 
 function copy(){
-  gulp.src( entry )
-    .pipe( destination );
+  return gulp.src( entry )
+    .pipe( gulp.dest(destination) );
 }
 
 export default copy;
