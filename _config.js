@@ -11,6 +11,23 @@ const paths = {
   dist: './dist'
 };
 
+const ignoreGlob = [
+  `${paths.source}/**/*`,
+  // ignore HTML files
+  `!${paths.source}/**/*.html`,
+  // ignore PHP files
+  `!${paths.source}/**/*.php`,
+  // ignore images
+  `!${paths.source}/${folders.img}/`,
+  `!${paths.source}/${folders.img}/**/*`,
+  //ignore sass stylesheets
+  `!${paths.source}/${folders.sass}/`,
+  `!${paths.source}/${folders.sass}/**/*`,
+  // ignore Javascript files
+  `!${paths.source}/${folders.javascript}/`,
+  `!${paths.source}/${folders.javascript}/**/*`,
+];
+
 const sass = {
 
 };
@@ -63,6 +80,6 @@ const imagemin = {
   }
 };
 
-const configs  = {folders, paths, sass, webpack, browsersync, imagemin};
+const configs  = {folders, paths, sass, webpack, browsersync, imagemin, ignoreGlob};
 
 export default configs;
