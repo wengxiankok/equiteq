@@ -1,5 +1,5 @@
 import gulp    from 'gulp';
-import webpack from 'webpack';
+import webpack from 'webpack-stream';
 
 // import config
 import configs from './../_config';
