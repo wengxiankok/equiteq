@@ -7,7 +7,7 @@ import sourcemaps   from 'gulp-sourcemaps';
 // import config
 import configs from './../_config';
 // import utilities
-import argv from './utils/arguments';
+import argv from './../utils/arguments';
 
 const entry      = `${configs.paths.source}/${configs.folders.sass}/*.scss`;
 const destinaton = `${configs.paths.build}/${configs.folders.stylesheets}`;
