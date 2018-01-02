@@ -18,13 +18,13 @@ import argv  from './utils/arguments';
 import chalk from 'chalk';
 import log   from 'fancy-log';
 
-const devTasks = [ server, watcher, page, styles, scripts, images ];
-gulp.task('dev', gulp.parallel( devTasks ));
+// specific tasks
+const tasks = [ page, images, scripts, styles, clean ];
+tasks.forEach( task => gulp.task(task) );
 
-gulp.task('build',
-  gulp.series([clean, set],
-  gulp.parallel([scripts, styles]))
-);
+// main tasks
+gulp.task('dev', gulp.series( clean, gulp.parallel(server, watcher, page, styles, scripts, images) ));
+gulp.task('build', gulp.series( [clean, set], gulp.parallel(page, scripts, styles, images) ));
 
 function set(done){
   configs.webpack.watch = false;
