@@ -8,12 +8,12 @@ import configs from './../_config';
 let entries = [];
 for( const path in configs.webpack.entry ) entries.push( configs.webpack.entry[path] );
 
-const destPath = `${configs.paths.build}/${configs.folders.javascript}`;
+const destination = `${configs.paths.build}/${configs.folders.javascript}`;
 
 function scripts(){
   return gulp.src( entries )
   .pipe( webpack(configs.webpack) )
-  .pipe( gulp.dest(destPath) );
+  .pipe( gulp.dest(destination) );
 }
 
 export default scripts;

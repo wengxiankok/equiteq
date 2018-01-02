@@ -6,15 +6,15 @@ import autoprefixer from 'gulp-autoprefixer';
 // import config
 import configs from './../_config';
 
-const sourcePath = `${configs.paths.source}/${configs.folders.sass}/*.scss`;
-const destPath   = `${configs.paths.build}/${configs.folders.stylesheets}`;
+const entry      = `${configs.paths.source}/${configs.folders.sass}/*.scss`;
+const destinaton = `${configs.paths.build}/${configs.folders.stylesheets}`;
 
 function styles(){
-  return gulp.src( sourcePath )
+  return gulp.src( entry )
     .pipe( plumber() )
     .pipe( sass(configs.sass) )
     .pipe( autoprefixer() )
-    .pipe( gulp.dest(destPath) );
+    .pipe( gulp.dest(destinaton) );
 }
 
 export default styles;
