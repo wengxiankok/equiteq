@@ -24,6 +24,7 @@ function watchHandler( watcher, task ){
     const filePath = path.split(/\/|\\/).pop();
     log( chalk.gray('---------------------') );
     log( `Detected ${ chalk.green.bold(events)} on ${ chalk.yellow.bold(filePath)}.` );
+    log( `Executing task '${chalk.cyan(task.name)}'.`);
     if( task != null ) task();
   });
 }
