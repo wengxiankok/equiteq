@@ -24,6 +24,7 @@ const webpack = {
   output: {
     filename: '[name].js'
   },
+  devtool: 'source-maps',
   stats: {
     version: false,
     timings: true
