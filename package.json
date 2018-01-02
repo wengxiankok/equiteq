@@ -4,5 +4,12 @@
   "description": "A modern front-end boilerplate to kickstart your next project.",
   "main": "index.js",
   "author": "Bryon Sigawin <bryon.sigawin@forefront.com.my>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0"
+  }
 }
