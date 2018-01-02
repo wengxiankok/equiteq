@@ -5,6 +5,12 @@
   "main": "index.js",
   "author": "Bryon Sigawin <bryon.sigawin@forefront.com.my>",
   "license": "MIT",
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "babelrc": false
+  },
   "dependencies": {
     "gulp": "^4.0.0"
   },
