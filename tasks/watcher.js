@@ -6,16 +6,17 @@ import log   from 'fancy-log';
 import configs from './../_config';
 
 // import tasks
+import page from './page';
 import styles from './styles';
 
 function watcher(){
   const styleWatcher  = gulp.watch(`${configs.paths.source}/**/*.scss`);
   const scriptWatcher = gulp.watch(`${configs.paths.source}/**/*.js`);
-  // const htmlWatcher   = gulp.watch(`${configs.paths.source}/**/*.html`);
+  const pageWatcher   = gulp.watch(`${configs.paths.source}/**/*.html`);
 
   watchHandler( styleWatcher, styles );
   watchHandler( scriptWatcher, null );
-  // watchHandler( htmlWatcher, html );
+  watchHandler( pageWatcher, page );
 }
 
 function watchHandler( watcher, task ){
