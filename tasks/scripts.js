@@ -1,12 +1,10 @@
-import gulp    from 'gulp';
-import webpack from 'webpack-stream';
+import gulp           from 'gulp';
+import webpack        from 'webpack-stream';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
-// import config
-import configs from './../_config';
-
 // import utilities
-import argv from './../utils/arguments';
+import configs from './../_config';
+import argv    from './../utils/arguments';
 
 // create basic array of entry files
 let entries = [];

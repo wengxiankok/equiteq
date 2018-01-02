@@ -1,10 +1,10 @@
-import gulp from 'gulp';
+import gulp     from 'gulp';
 import imagemin from 'gulp-imagemin';
-import mozjpeg from 'imagemin-mozjpeg';
+import mozjpeg  from 'imagemin-mozjpeg';
 import pngquant from 'imagemin-pngquant';
-import svgo from 'imagemin-svgo';
+import svgo     from 'imagemin-svgo';
 
-// import config
+// import utilities
 import configs from './../_config';
 
 const plugins = [

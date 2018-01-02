@@ -1,10 +1,10 @@
 import gulp  from 'gulp';
 import strip from 'gulp-strip-comments';
 
-// import config
+// import utilities
 import configs from './../_config';
-import argv from './../utils/arguments';
-import size from './../utils/size';
+import argv    from './../utils/arguments';
+import size    from './../utils/size';
 
 const entry       = `${configs.paths.source}/**/*.${argv.pageExt}`;
 const destination = `${configs.paths.build}`;

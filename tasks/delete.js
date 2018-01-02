@@ -2,10 +2,9 @@ import del   from 'del';
 import log   from 'fancy-log';
 import chalk from 'chalk';
 
-// import config
-import configs from './../_config';
 // import utilities
-import argv  from './../utils/arguments';
+import configs from './../_config';
+import argv    from './../utils/arguments';
 
 let entry = [
   `${configs.paths.build}/**/*`,

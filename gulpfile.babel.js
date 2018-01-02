@@ -1,22 +1,19 @@
-import gulp from 'gulp';
+import gulp  from 'gulp';
+import chalk from 'chalk';
+import log   from 'fancy-log';
 
 // import tasks
 import watcher from './tasks/watcher';
-import server from './tasks/server';
+import server  from './tasks/server';
+import page    from './tasks/page';
 import scripts from './tasks/scripts';
-
-import page from './tasks/page';
-import images from './tasks/images';
-import styles from './tasks/styles';
-import clean  from './tasks/delete';
-
-// import config
-import configs from './_config';
+import styles  from './tasks/styles';
+import images  from './tasks/images';
+import clean   from './tasks/delete';
 
 // import utilities
-import argv  from './utils/arguments';
-import chalk from 'chalk';
-import log   from 'fancy-log';
+import configs from './_config';
+import argv    from './utils/arguments';
 
 // specific tasks
 const tasks = [ page, images, scripts, styles, clean ];

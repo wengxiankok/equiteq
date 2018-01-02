@@ -2,12 +2,12 @@ import gulp  from 'gulp';
 import chalk from 'chalk';
 import log   from 'fancy-log';
 
+// import tasks
+import page   from './page';
+import styles from './styles';
+
 // import config
 import configs from './../_config';
-
-// import tasks
-import page from './page';
-import styles from './styles';
 
 function watcher(){
   const styleWatcher  = gulp.watch(`${configs.paths.source}/**/*.scss`);
