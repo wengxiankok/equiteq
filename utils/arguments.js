@@ -6,7 +6,7 @@ const argvs = yargs.argv;
 
 function argv(){
   const env     = argvs.production ? 'production' : 'develop';
-  const pageExt = argvs.type || 'html';
+  const pageExt = argvs.php ? 'php' : 'html';
 
   // log environment
   log(chalk.green(`Current Environment: '${chalk.cyan.bold(env)}'`));
