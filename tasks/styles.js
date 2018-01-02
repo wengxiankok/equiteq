@@ -2,6 +2,7 @@ import gulp         from 'gulp';
 import sass         from 'gulp-sass';
 import plumber      from 'gulp-plumber';
 import autoprefixer from 'gulp-autoprefixer';
+import sourcemaps   from 'gulp-sourcemaps';
 
 // import config
 import configs from './../_config';
@@ -16,8 +17,12 @@ function styles(){
 
   return gulp.src( entry )
     .pipe( plumber() )
-    .pipe( sass(configs.sass) )
-    .pipe( autoprefixer() )
+    .pipe( sourcemaps.init() )
+      .pipe( sass(configs.sass) )
+    .pipe( sourcemaps.write({includeContent: false}) )
+    .pipe( sourcemaps.init({loadMaps: true}) )
+      .pipe( autoprefixer() )
+    .pipe( sourcemaps.write('.') )
     .pipe( gulp.dest(destinaton) );
 }
 
