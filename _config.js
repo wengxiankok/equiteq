@@ -39,10 +39,8 @@ const webpack = {
 const browsersync = {
   logLevel: 'info',
   logFileChanges: false,
-  server: {
-    baseDir: paths.build,
-    port: 3000
-  },
+  server: paths.build,
+  // proxy: 'website.local',
   files: [
     `${paths.build}/${folders.stylesheets}/*.css`,
     `${paths.build}/${folders.javascript}/*.js`,
