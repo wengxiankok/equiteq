@@ -1,0 +1,8 @@
+{
+  "name": "starter-0.2.0",
+  "version": "0.1.0",
+  "description": "A modern front-end boilerplate to kickstart your next project.",
+  "main": "index.js",
+  "author": "Bryon Sigawin <bryon.sigawin@forefront.com.my>",
+  "license": "MIT"
+}
