@@ -6,15 +6,17 @@ import chalk from 'chalk';
 import configs from './../_config';
 import argv    from './../utils/arguments';
 
-let entry = [
-  `${configs.paths.build}/**/*`,
-  `!${configs.paths.build}/img`,
-  `!${configs.paths.build}/img/**`
-];
+let entry = [`${configs.paths.build}/**/*`];
 
 function clean(done){
   if( argv.quick ){
     log( chalk.red(`Ignored '${chalk.cyan('img')}' folder.`));
+
+    entry.push(
+      `!${configs.paths.build}/${configs.folders.images}`,
+      `!${configs.paths.build}/${configs.folders.images}/**`
+    );
+
     return done();
   }
 
