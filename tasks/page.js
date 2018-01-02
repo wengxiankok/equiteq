@@ -5,7 +5,7 @@ import strip from 'gulp-strip-comments';
 import configs from './../_config';
 import argv from './../utils/arguments';
 
-const entry       = `${configs.paths.source}/**/*.${argv().ext}`;
+const entry       = `${configs.paths.source}/**/*.${argv.ext}`;
 const destination = `${configs.paths.build}`;
 
 function page(){
