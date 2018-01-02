@@ -21,7 +21,7 @@ function clean(done){
   }
 
   return del( entry )
-    .then(log( chalk.red.bold('Folder cleaned.') ));
+    .then(log( chalk.red.bold('Build folder cleaned.') ));
 }
 
 export default clean;
