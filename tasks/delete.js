@@ -16,8 +16,6 @@ function clean(done){
       `!${configs.paths.build}/${configs.folders.images}`,
       `!${configs.paths.build}/${configs.folders.images}/**`
     );
-
-    return done();
   }
 
   return del( entry )
