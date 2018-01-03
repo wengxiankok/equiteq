@@ -12,10 +12,9 @@ function argvParser(){
   };
 
   log( chalk.gray('---------------------') );
-  // log environment
   log(chalk.green(`Current Environment: '${chalk.cyan.bold(args.env)}'`));
-  // log page extension
-  log(chalk.green(`Editing File Type: [${chalk.cyan.bold(args.pageExt)}]`));
+  log(chalk.green(`Editing File Type: [.${chalk.cyan.bold(args.pageExt)}]`));
+  if( args.quick ) log( chalk.yellow('Skipping Images...'));
   log( chalk.gray('---------------------') );
 
   return args;
