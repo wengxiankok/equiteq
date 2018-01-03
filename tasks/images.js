@@ -5,24 +5,29 @@ import pngquant from 'imagemin-pngquant';
 import svgo     from 'imagemin-svgo';
 
 // import utilities
-import configs from './../_config';
-import argv    from './../utils/arguments';
+import {paths, folders} from './configs/_configs';
+import argv from './utils/arguments';
 
-const plugins = [
-  mozjpeg( configs.imagemin.plugins.mozjpeg ),
-  pngquant( configs.imagemin.plugins.pngquant ),
-  svgo( configs.imagemin.plugins.svgo )
-];
+const config = {
+  options: {
+    verbose: true
+  },
+  plugins: [
+    mozjpeg({ quality: 70 }),
+    pngquant({ quality: 60 }),
+    svgo()
+  ]
+};
 
-const entry = `${configs.paths.source}/${configs.folders.images}/**/*`;
-const destination = `${configs.paths.build}/${configs.folders.images}`;
+const entry = `${paths.source}/${folders.images}/**/*`;
+const dest  = `${paths.build}/${folders.images}`;
 
 function images(done){
   if( argv.quick ) return done();
 
   return gulp.src( entry )
-    .pipe( imagemin( plugins, configs.imagemin.options ) )
-    .pipe( gulp.dest(destination) );
+    .pipe( imagemin( config.plugins, config.options ) )
+    .pipe( gulp.dest(dest) );
 }
 
 export default images;

@@ -7,12 +7,12 @@ import page   from './page';
 import styles from './styles';
 
 // import config
-import configs from './../_config';
+import {paths} from './configs/_configs';
 
 function watcher(){
-  const styleWatcher  = gulp.watch(`${configs.paths.source}/**/*.scss`);
-  const scriptWatcher = gulp.watch(`${configs.paths.source}/**/*.js`);
-  const pageWatcher   = gulp.watch(`${configs.paths.source}/**/*.html`);
+  const styleWatcher  = gulp.watch(`${paths.source}/**/*.scss`);
+  const scriptWatcher = gulp.watch(`${paths.source}/**/*.js`);
+  const pageWatcher   = gulp.watch(`${paths.source}/**/*.html`);
 
   watchHandler( styleWatcher, styles );
   watchHandler( scriptWatcher, null );

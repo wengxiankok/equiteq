@@ -1,8 +1,20 @@
 import browsersync from 'browser-sync';
 
 // import utilities
-import configs from './../_config';
+import {paths, folders} from './configs/_configs';
+
+const config = {
+  logLevel: 'info',
+  logFileChanges: false,
+  server: paths.build,
+  // proxy: 'website.local',
+  files: [
+    `${paths.build}/${folders.stylesheets}/*.css`,
+    `${paths.build}/${folders.javascript}/*.js`,
+    `${paths.build}/*.html`,
+  ]
+};
 
 export default function server(){
-  browsersync.init( configs.browsersync );
+  browsersync.init( config );
 }

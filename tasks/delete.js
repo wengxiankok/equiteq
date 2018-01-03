@@ -3,16 +3,16 @@ import log   from 'fancy-log';
 import chalk from 'chalk';
 
 // import utilities
-import configs from './../_config';
-import argv    from './../utils/arguments';
+import {paths, folders} from './configs/_configs';
+import argv from './utils/arguments';
 
-let entry = [`${configs.paths.build}/**/*`];
+let entry = [`${paths.build}/**/*`];
 
 function clean(){
   if( argv.quick ){
     entry.push(
-      `!${configs.paths.build}/${configs.folders.images}`,
-      `!${configs.paths.build}/${configs.folders.images}/**`
+      `!${paths.build}/${folders.images}`,
+      `!${paths.build}/${folders.images}/**`
     );
   }
 

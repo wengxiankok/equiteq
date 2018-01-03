@@ -1,14 +1,14 @@
 import gulp from 'gulp';
 
 // import utilities
-import configs from './../_config';
+import {paths, ignores} from './configs/_configs';
 
-const entry = configs.ignoreGlob;
-const destination = `${configs.paths.build}`;
+const entry = ignores;
+const dest  = `${paths.build}`;
 
 function copy(){
   return gulp.src( entry )
-    .pipe( gulp.dest(destination) );
+    .pipe( gulp.dest(dest) );
 }
 
 export default copy;

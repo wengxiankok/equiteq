@@ -8,10 +8,10 @@ import scripts from './tasks/scripts';
 import styles  from './tasks/styles';
 import images  from './tasks/images';
 import clean   from './tasks/delete';
-import copy   from './tasks/copy';
+import copy    from './tasks/copy';
 
 // import utilities
-import configs from './_config';
+import configs from './tasks/configs/_configs';
 
 // specific tasks
 const tasks = [ page, images, scripts, styles, clean, copy ];
