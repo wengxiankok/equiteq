@@ -4,6 +4,9 @@ import plumber      from 'gulp-plumber';
 import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps   from 'gulp-sourcemaps';
 
+import log   from 'fancy-log';
+import chalk from 'chalk';
+
 // import config
 import {paths, folders} from './configs/_configs';
 import argv    from './utils/arguments';
@@ -23,12 +26,13 @@ function styles(){
     .pipe( plumber() )
     .pipe( sourcemaps.init() )
       .pipe( sass(config) )
+        .on('error', error=> log(chalk.red(`\n\n${error.formatted}`)))
     .pipe( sourcemaps.write({includeContent: false}) )
     .pipe( sourcemaps.init({loadMaps: true}) )
       .pipe( autoprefixer() )
-      .pipe( size() )
     .pipe( sourcemaps.write('.') )
-    .pipe( gulp.dest(dest) );
+    .pipe( gulp.dest(dest) )
+    .pipe( size() );
 }
 
 export default styles;
