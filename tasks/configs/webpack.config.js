@@ -1,8 +1,9 @@
 import {paths, folders} from './_configs';
 
 module.exports = {
+  watch: true,
   entry: {
-    entry: `./${paths.source}/${folders.javascript}/entry.js`
+    app: `./${paths.source}/${folders.javascript}/app.js`
   },
   output: {
     filename: '[name].js'
