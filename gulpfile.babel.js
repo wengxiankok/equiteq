@@ -11,7 +11,7 @@ import clean   from './tasks/delete';
 import copy    from './tasks/copy';
 
 // import utilities
-import configs from './tasks/configs/_configs';
+import wpConfig from './tasks/configs/webpack.config';
 
 // specific tasks
 const tasks = [ page, images, scripts, styles, clean, copy ];
@@ -22,7 +22,7 @@ gulp.task('dev', gulp.series( clean, gulp.parallel(server, watcher, page, styles
 gulp.task('build', gulp.series( [clean, set], gulp.parallel(page, scripts, styles, images, copy) ));
 
 function set(done){
-  configs.webpack.watch = false;
+  wpConfig.watch = false;
   done();
 }
 
