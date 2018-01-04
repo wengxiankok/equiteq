@@ -1,4 +1,5 @@
 import gulp  from 'gulp';
+import newer from 'gulp-newer';
 import strip from 'gulp-strip-comments';
 
 // import utilities
@@ -10,10 +11,11 @@ const entry = `${paths.source}/**/*.${argv.pageExt}`;
 const dest  = `${paths.build}`;
 
 function page(){
-  return gulp.src(entry)
+  return gulp.src( entry )
+    .pipe( newer(dest) )
     .pipe( strip() )
     .pipe( size() )
-    .pipe( gulp.dest(dest ) );
+    .pipe( gulp.dest(dest) );
 }
 
 export default page;
