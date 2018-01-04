@@ -1,8 +1,16 @@
 import yargs from 'yargs';
 import chalk from 'chalk';
-import log from 'fancy-log';
 
 const argvs = yargs.argv;
+const ASCII = String.raw`
+  ____        _ _
+ |  _ \      (_) |
+ | |_) | ___  _| |_ __
+ |  _ < / _ \| | | '__|
+ | |_) | (_) | | | |
+ |____/ \___/|_|_|_|  v0.3.1
+
+`;
 
 function argvParser(){
   const args = {
@@ -11,11 +19,12 @@ function argvParser(){
     quick: argvs.quick || argvs.q
   };
 
-  log( chalk.gray('---------------------') );
-  log(chalk.green(`Current Environment: '${chalk.cyan.bold(args.env)}'`));
-  log(chalk.green(`Editing File Type: [.${chalk.cyan.bold(args.pageExt)}]`));
-  if( args.quick ) log( chalk.yellow('Skipping Images...'));
-  log( chalk.gray('---------------------') );
+  console.log( chalk.gray('---------------------') );
+  console.log( chalk.green(ASCII));
+  console.log(chalk.green(`Current Environment: '${chalk.cyan.bold(args.env)}'`));
+  console.log(chalk.green(`Editing File Type: [.${chalk.cyan.bold(args.pageExt)}]`));
+  if( args.quick ) console.log( chalk.yellow('Skipping Images...'));
+  console.log( chalk.gray('---------------------') );
 
   return args;
 }

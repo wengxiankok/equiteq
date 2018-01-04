@@ -27,14 +27,14 @@ function watchHandler( watcher ){
 
     const filePath = path.split(/\/|\\/).pop();
     log( chalk.gray('---------------------') );
-    log( `Detected ${ chalk.green.bold(events)} on ${ chalk.yellow.bold(filePath)}.` );
+    log(chalk.bold.white(`Detected '${chalk.cyan(events)}' on '${ chalk.green(filePath) }'`));
   });
 
   watcher.on('unlink', path=>{
     const re = new RegExp( paths.source.split('/').pop() );
     const buildPath = path.replace( re, paths.build.replace('/', '\\') );
 
-    log( chalk.red.bold(`'${ chalk.yellow(buildPath.split(/\/|\\/).pop()) }' deleted.`) );
+    log( chalk.bold.red(`Deleted '${ chalk.green(buildPath.split(/\/|\\/).pop()) }'`) );
     del(buildPath);
   });
 }

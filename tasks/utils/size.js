@@ -12,7 +12,7 @@ module.exports = function(){
 
   	//Check if file.stat exists (gulp.concat removes it for example)
   	const filesize = file.stat ? getFileSize(file.stat.size) : getFileSize(Buffer.byteLength(String(file.contents)));
-    log( `Output: ${chalk.cyan(filenameShort)}[${chalk.magenta(filesize)}]`);
+    log(chalk.yellow(`Output: ${chalk.green(filenameShort)}[${chalk.magenta(filesize)}]`));
 
   	callback(null,file);
   });
