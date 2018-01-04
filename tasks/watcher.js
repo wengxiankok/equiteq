@@ -6,6 +6,7 @@ import del from 'del';
 // import tasks
 import page   from './page';
 import styles from './styles';
+import images from './images';
 
 // import config
 import {paths, folders} from './configs/_configs';
@@ -15,6 +16,7 @@ function watcher(){
   const watchers = {
     scripts: gulp.watch(`${paths.source}/${folders.javascript}/**/*.js`),
     styles: gulp.watch(`${paths.source}/${folders.sass}/**/*.scss`, styles),
+    images: gulp.watch(`${paths.source}/${folders.images}/**/*`, images),
     page: gulp.watch(`${paths.source}/*.${argv.pageExt}`, page)
   };
 
