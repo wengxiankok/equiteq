@@ -18,7 +18,7 @@ const tasks = [ page, images, scripts, styles, clean, copy ];
 tasks.forEach( task => gulp.task(task) );
 
 // main tasks
-gulp.task('dev', gulp.series( clean, gulp.parallel(server, watcher, page, styles, scripts, images, copy) ));
+gulp.task('dev', gulp.series( clean, gulp.parallel( page, styles, images, copy ), gulp.parallel(scripts, server, watcher) ));
 gulp.task('build', gulp.series( [clean, set], gulp.parallel(page, scripts, styles, images, copy) ));
 
 function set(done){
