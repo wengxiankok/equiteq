@@ -5,6 +5,7 @@ import del from 'del';
 
 // import tasks
 import page   from './page';
+import copy   from './copy';
 import styles from './styles';
 import images from './images';
 
@@ -17,7 +18,8 @@ function watcher(){
     scripts: gulp.watch(`${paths.source}/${folders.javascript}/**/*.js`),
     styles: gulp.watch(`${paths.source}/${folders.sass}/**/*.scss`, styles),
     images: gulp.watch(`${paths.source}/${folders.images}/**/*`, images),
-    page: gulp.watch(`${paths.source}/*.${argv.pageExt}`, page)
+    page: gulp.watch(`${paths.source}/*.${argv.pageExt}`, page),
+    assets: gulp.watch(`${paths.source}/**/*`, copy)
   };
 
   for( const task in watchers ) watchHandler( watchers[task], task );
