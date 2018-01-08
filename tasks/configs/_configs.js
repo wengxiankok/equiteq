@@ -1,3 +1,5 @@
+import argv    from './../utils/arguments';
+
 const folders = {
   sass: 'sass',
   stylesheets: 'css',
@@ -11,4 +13,19 @@ const paths = {
   dist: './dist'
 };
 
-export {paths, folders};
+const ignores = [
+  `${paths.source}/**/*`,
+  // ignore page files
+  `!${paths.source}/**/*.${argv.pageExt}`,
+  // ignore images
+  `!${paths.source}/${folders.images}`,
+  `!${paths.source}/${folders.images}/**/*`,
+  //ignore sass stylesheets
+  `!${paths.source}/${folders.sass}`,
+  `!${paths.source}/${folders.sass}/**/*`,
+  // ignore Javascript files
+  `!${paths.source}/${folders.javascript}`,
+  `!${paths.source}/${folders.javascript}/**/*`,
+];
+
+export {paths, folders, ignores};

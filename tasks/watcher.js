@@ -10,7 +10,7 @@ import styles from './styles';
 import images from './images';
 
 // import config
-import {paths, folders} from './configs/_configs';
+import {paths, folders, ignores} from './configs/_configs';
 import argv    from './utils/arguments';
 
 function watcher(){
@@ -19,7 +19,7 @@ function watcher(){
     styles: gulp.watch(`${paths.source}/${folders.sass}/**/*.scss`, styles),
     images: gulp.watch(`${paths.source}/${folders.images}/**/*`, images),
     page: gulp.watch(`${paths.source}/*.${argv.pageExt}`, page),
-    assets: gulp.watch(`${paths.source}/**/*`, copy)
+    assets: gulp.watch( ignores, copy)
   };
 
   for( const task in watchers ) watchHandler( watchers[task], task );
