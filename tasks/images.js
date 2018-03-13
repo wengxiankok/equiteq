@@ -11,7 +11,7 @@ import svgo     from 'imagemin-svgo';
 
 /* ---- Import Configs ------------ */
 import {production, baseDir, configs} from './configs';
-import {size, logger} from './utils';
+import {logger} from './utils';
 
 // Define File Paths
 const config = configs.images;
