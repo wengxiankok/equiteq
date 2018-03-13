@@ -20,6 +20,10 @@ export const baseDir = {
 };
 
 export const configs = {
+  pages : {
+    extensions: ['.html', '.php']
+  },
+
   styles: {
     sass: {
 
