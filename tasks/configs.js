@@ -4,6 +4,7 @@ export const env = yargs.argv.p ? 'production' : 'develop';
 export const production = env === 'production' ? true : false;
 
 export const baseDir = {
+  static: './static',
   source: './src',
   dist: './dist',
 
