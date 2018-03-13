@@ -1,14 +1,15 @@
 /* ---- Import NPM Modules --------- */
 import del   from 'del';
-import log   from 'fancy-log';
-import chalk from 'chalk';
 
 /* ---- Import Configs ------------ */
 import {baseDir} from './configs';
+import {logger} from './utils';
 
 const source = baseDir.dist;
 
 export function clean(){
   return del(source)
-    .then(log(chalk.red('Dist folder cleaned.')));
+    .then(()=>{
+      logger('Dist folder cleaned.', 'red');
+    });
 }
