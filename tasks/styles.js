@@ -14,6 +14,7 @@ import sourcemaps   from 'gulp-sourcemaps';
 
 /* ---- Import Configs ------------ */
 import {production, baseDir, configs} from './configs';
+import {size} from './utils';
 
 // Define File Paths
 const config = configs.styles;
@@ -34,16 +35,17 @@ const pluginsProduction = [
 const plugins = production ? pluginsProduction : pluginsDevolop;
 
 // Main Exported Task
-export function styles(){
+export function styles() {
   return gulp.src(source)
     .pipe(sourcemaps.init())
       .pipe(sass(config.sass))
       .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
+    .pipe(size())
     .pipe(gulp.dest(dest));
 }
 
 // Main Exported Watcher
-export function watcher(){
+export function watcher() {
   gulp.watch('./src/sass/**/*.scss', styles);
 }
