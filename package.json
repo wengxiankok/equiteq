@@ -5,12 +5,6 @@
   "main": "index.js",
   "author": "Bryon Sigawin <bryon.sigawin@forefront.com.my>",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "babelrc": false
-  },
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
