@@ -18,7 +18,7 @@ import {size} from './utils';
 
 // Define File Paths
 const config = configs.styles;
-const source = path.resolve(baseDir.source, baseDir.styles.src);
+const source = path.resolve(baseDir.src, baseDir.styles.src);
 const dest   = path.resolve(baseDir.dist, baseDir.styles.dest);
 
 // Define Plugins

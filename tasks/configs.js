@@ -5,12 +5,17 @@ export const production = env === 'production' ? true : false;
 
 export const baseDir = {
   static: './static',
-  source: './src',
+  src: './src',
   dist: './dist',
 
   styles: {
     src: 'sass/**/*.scss',
     dest: 'css/',
+  },
+
+  images: {
+    src: 'img/**/*',
+    dest: 'img/'
   }
 };
 
@@ -25,6 +30,16 @@ export const configs = {
     },
     autoprefixer: {
       browsers: ['last 2 version']
+    }
+  },
+
+  images: {
+    options: {
+      verbose: true,
+    },
+    quality: {
+      jpeg: 70,
+      png : 70
     }
   }
 };
