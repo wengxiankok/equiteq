@@ -1,6 +1,6 @@
 import yargs from 'yargs';
 
-export const env = yargs.argv.p ? 'production' : 'develop';
+export const env = yargs.argv.p ? 'production' : 'development';
 export const production = env === 'production' ? true : false;
 
 export const baseDir = {
@@ -11,6 +11,11 @@ export const baseDir = {
   styles: {
     src: 'sass/**/*.scss',
     dest: 'css/',
+  },
+
+  scripts: {
+    src: 'js/**/*.js',
+    dest: 'js/',
   },
 
   images: {
