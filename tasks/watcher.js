@@ -23,9 +23,9 @@ import {baseDir, configs} from './configs';
 // Define Watchers
 const watchers = {
   static:  gulp.watch(baseDir.static, copy),
-  styles:  gulp.watch(path.resolve(baseDir.src, baseDir.styles.src), styles),
-  scripts: gulp.watch(path.resolve(baseDir.src, baseDir.scripts.src), scripts),
-  images:  gulp.watch(path.resolve(baseDir.src, baseDir.images.src), images),
+  styles:  gulp.watch(path.join(baseDir.src, baseDir.styles.src), styles),
+  scripts: gulp.watch(path.join(baseDir.src, baseDir.scripts.src), scripts),
+  images:  gulp.watch(path.join(baseDir.src, baseDir.images.src), images),
   pages:   gulp.watch(pageSource, pages)
 };
 

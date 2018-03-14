@@ -15,8 +15,8 @@ import {logger} from './utils';
 
 // Define File Paths
 const config = configs.images;
-const source = path.resolve(baseDir.src, baseDir.images.src);
-const dest   = path.resolve(baseDir.dist, baseDir.images.dest);
+const source = path.join(baseDir.src, baseDir.images.src);
+const dest   = path.join(baseDir.dist, baseDir.images.dest);
 
 const plugins = [
   mozjpeg({ quality: config.quality.jpeg }),
