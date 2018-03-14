@@ -4,9 +4,9 @@ export const env = yargs.argv.p ? 'production' : 'development';
 export const production = env === 'production' ? true : false;
 
 export const baseDir = {
-  static: './static',
+  static: 'static/',
   src: './src',
-  dist: './dist',
+  dist: 'dist/',
 
   styles: {
     src: 'sass/**/*.scss',
@@ -61,5 +61,14 @@ export const configs = {
       scripts: 'js/**/*.js',
     },
     options: {}
+  },
+
+  watcher: {
+    remove: true,
+    files: {
+      scripts: true,
+      images: true,
+      styles: true
+    }
   }
 };
