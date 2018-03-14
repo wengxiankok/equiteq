@@ -29,8 +29,6 @@ for(const glob in config.watch){
   else watchFiles.push(path.resolve(baseDir.dist, g));
 }
 
-console.log(options);
-
 // create proxy or static server
 if(config.proxy) options['proxy'] = config.proxy;
 else options['server'] = baseDir.dist;
