@@ -44,8 +44,3 @@ export function styles() {
     .pipe(size())
     .pipe(gulp.dest(dest));
 }
-
-// Main Exported Watcher
-export function watcher() {
-  gulp.watch('./src/sass/**/*.scss', styles);
-}
