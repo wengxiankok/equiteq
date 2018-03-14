@@ -1,9 +1,9 @@
 /* ---- Import NPM Modules --------- */
-import del   from 'del';
+import del       from 'del';
 
 /* ---- Import Configs ------------ */
 import {baseDir} from './configs';
-import {logger} from './utils';
+import {logger}  from './utils';
 
 const source = baseDir.dist;
 
