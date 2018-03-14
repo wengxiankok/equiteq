@@ -6,6 +6,7 @@
   "author": "Bryon Sigawin <bryon.sigawin@forefront.com.my>",
   "license": "MIT",
   "dependencies": {
+    "browser-sync": "^2.23.6",
     "webpack-cli": "^2.0.12"
   },
   "devDependencies": {

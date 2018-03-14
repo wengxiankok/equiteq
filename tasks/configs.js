@@ -50,5 +50,16 @@ export const configs = {
       jpeg: 70,
       png : 70
     }
+  },
+
+  browsersync: {
+    proxy: false,
+    watch: {
+      pages: ['**/*.html', '**/*.php'],
+      styles: 'css/**/*.css',
+      images: 'img/**/*.*',
+      scripts: 'js/**/*.js',
+    },
+    options: {}
   }
 };
