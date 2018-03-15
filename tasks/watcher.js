@@ -9,7 +9,6 @@ import gulp                from 'gulp';
 
 /* ---- Import Tasks --------------- */
 import {copy}              from './copy';
-import {clean}             from './clean';
 
 import {styles}            from './styles';
 import {images}            from './images';
@@ -17,9 +16,8 @@ import {scripts}           from './scripts';
 import {pages, pageSource} from './pages';
 
 /* ---- Import Configs ------------- */
-// const config = configs.watcher;
 import {baseDir} from './configs';
-// import {size} from './utils';
+import {logger}  from './utils';
 
 // Define Watchers
 const watchers = {
@@ -39,6 +37,8 @@ function watchHandler(watcher){
     const parsed   = path.parse(p);
     const distVer  = path.join(baseDir.dist, parsed.dir, parsed.base);
 
-    console.log(distVer);
+    logger.log(`Deleted '${logger.string(parsed.base, 'yellow')}`, 'red');
+
+    del(distVer);
   });
 }
