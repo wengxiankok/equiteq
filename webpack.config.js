@@ -5,9 +5,8 @@ const path = require('path');
 // import {env} from './tasks/configs';
 
 module.exports = {
-  watch: true,
   mode: 'development',
-  entry: path.join(__dirname, './src/js/app.js'),
+  entry: path.posix.join(__dirname, './src/js/app.js'),
   output: {
     filename: '[name].js'
   },

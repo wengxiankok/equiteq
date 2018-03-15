@@ -9,14 +9,14 @@ import strip from 'gulp-strip-comments';
 /* ---- Import Configs ------------ */
 import {baseDir, configs} from './configs';
 
-// const source = path.join(baseDir.src, baseDir.styles.src);
+// const source = path.posix.join(baseDir.src, baseDir.styles.src);
 
 const config = configs.pages;
 const source = [];
 const dest   = baseDir.dist;
 
 config.extensions.forEach(ext => {
-  const p = path.join(baseDir.src, `**/*${ext}`);
+  const p = path.posix.join(baseDir.src, `**/*${ext}`);
   source.push(p);
 });
 
@@ -25,3 +25,5 @@ export function pages(){
     .pipe(strip())
     .pipe(gulp.dest(dest));
 }
+
+export const pageSource = source;

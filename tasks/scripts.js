@@ -14,8 +14,8 @@ import webpackConfig from './../webpack.config.js';
 import {baseDir}     from './configs';
 
 // Define File Paths
-const source = path.join(baseDir.src, baseDir.scripts.src);
-const dest   = path.join(baseDir.dist, baseDir.scripts.dest);
+const source = path.posix.join(baseDir.src, baseDir.scripts.src);
+const dest   = path.posix.join(baseDir.dist, baseDir.scripts.dest);
 
 export function scripts() {
   return gulp.src(source)
