@@ -19,6 +19,14 @@ export function size() {
   });
 }
 
-export function logger(message, color){
-  log(chalk`{${color} ${message}}`);
+class Logger{
+  log(message, color){
+    log(chalk`{${color} ${message}}`);
+  }
+
+  string(message, color){
+    return chalk`{${color} ${message}}`;
+  }
 }
+
+export const logger = new Logger();
