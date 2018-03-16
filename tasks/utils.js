@@ -7,7 +7,8 @@ import chalk    from 'chalk';
 import through  from 'through2';
 import filesize from 'filesize';
 
-export function size() {
+// Prints out size of streamed files
+export function size(){
   function logger(name, size) {
       log( chalk.yellow(`Output: ${chalk.green(name)}[${chalk.magenta(filesize(size))}]`));
   }
@@ -22,10 +23,12 @@ export function size() {
   });
 }
 
+// Standardized 'path.posix.join' function
 export function join(...paths){
   return path.posix.join(paths.toString());
 }
 
+// Logs out messages
 class Logger{
   print(message, color){
     log(chalk`{${color} ${message}}`);
@@ -36,4 +39,5 @@ class Logger{
   }
 }
 
+/* ---- Exports ---------------------- */
 export const logger = new Logger();
