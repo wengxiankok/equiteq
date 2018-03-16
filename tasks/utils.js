@@ -27,7 +27,7 @@ export function join(...paths){
 }
 
 class Logger{
-  log(message, color){
+  print(message, color){
     log(chalk`{${color} ${message}}`);
   }
 
