@@ -30,11 +30,11 @@ export function join(...paths){
 
 // Logs out messages
 class Logger{
-  print(message, color){
+  print(message, color = 'white'){
     log(chalk`{${color} ${message}}`);
   }
 
-  string(message, color){
+  string(message, color = 'white'){
     return chalk`{${color} ${message}}`;
   }
 }
