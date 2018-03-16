@@ -5,16 +5,14 @@
   "main": "index.js",
   "author": "Bryon Sigawin <bryon.sigawin@forefront.com.my>",
   "license": "MIT",
-  "dependencies": {
-    "browser-sync": "^2.23.6",
-    "webpack-cli": "^2.0.12"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^8.1.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
+    "browser-sync": "^2.23.6",
     "chalk": "^2.3.2",
     "del": "^3.0.0",
     "filesize": "^3.6.0",
