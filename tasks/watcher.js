@@ -8,16 +8,16 @@ import del                 from 'del';
 import gulp                from 'gulp';
 
 /* ---- Import Tasks --------------- */
-import {copy}              from './copy';
+import copy                from './copy';
 
-import {styles}            from './styles';
-import {images}            from './images';
-import {scripts}           from './scripts';
+import styles              from './styles';
+import images              from './images';
+import scripts             from './scripts';
 import {pages, pageSource} from './pages';
 
 /* ---- Import Configs ------------- */
-import {baseDir} from './configs';
-import {logger}  from './utils';
+import baseDir             from './configs';
+import logger              from './utils';
 
 
 export function watcher(){
