@@ -25,7 +25,7 @@ export function size(){
 
 // Standardized 'path.posix.join' function
 export function join(...paths){
-  return path.posix.join(paths.toString());
+  return path.posix.join(...paths);
 }
 
 // Logs out messages
