@@ -26,4 +26,4 @@ export default function pages(){
     .pipe(gulp.dest(dest));
 }
 
-export const pageSource = source;
+export const pSource = source;
