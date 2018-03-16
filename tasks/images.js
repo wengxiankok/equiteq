@@ -26,7 +26,7 @@ const plugins = [
 
 export default function images(){
   if(!production){
-    logger('Skipping Images...', 'red');
+    logger.print('Skipping Images...', 'red');
     return gulp.src(source)
       .pipe(gulp.dest(dest));
   }

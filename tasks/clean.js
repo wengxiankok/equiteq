@@ -10,6 +10,6 @@ const source = baseDir.dist;
 export default function clean(){
   return del(source)
     .then(()=>{
-      logger('Dist folder cleaned.', 'red');
+      logger.print('Dist folder cleaned.', 'red');
     });
 }
