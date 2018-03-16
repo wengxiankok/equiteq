@@ -1,3 +1,6 @@
+/* ---- Import Node.js Fuctions ---- */
+import path     from 'path';
+
 /* ---- Import NPM Modules --------- */
 import log      from 'fancy-log';
 import chalk    from 'chalk';
@@ -17,6 +20,10 @@ export function size() {
 
     cb(null, file);
   });
+}
+
+export function join(...paths){
+  return path.posix.join(paths.toString());
 }
 
 class Logger{
