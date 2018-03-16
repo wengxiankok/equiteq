@@ -19,16 +19,17 @@ import {pages, pageSource} from './pages';
 import {baseDir} from './configs';
 import {logger}  from './utils';
 
-// Define Watchers
-const watchers = {
-  static:  gulp.watch(baseDir.static, copy),
-  styles:  gulp.watch(path.posix.join(baseDir.src, baseDir.styles.src), styles),
-  scripts: gulp.watch(path.posix.join(baseDir.src, baseDir.scripts.src), scripts),
-  images:  gulp.watch(path.posix.join(baseDir.src, baseDir.images.src), images),
-  pages:   gulp.watch(pageSource, pages)
-};
 
 export function watcher(){
+  // Define Watchers
+  const watchers = {
+    static:  gulp.watch(baseDir.static, copy),
+    styles:  gulp.watch(path.posix.join(baseDir.src, baseDir.styles.src), styles),
+    scripts: gulp.watch(path.posix.join(baseDir.src, baseDir.scripts.src), scripts),
+    images:  gulp.watch(path.posix.join(baseDir.src, baseDir.images.src), images),
+    pages:   gulp.watch(pageSource, pages)
+  };
+
   for(const task in watchers) watchHandler(watchers[task]);
 }
 
@@ -37,7 +38,7 @@ function watchHandler(watcher){
     const parsed   = path.parse(p);
     const distVer  = path.join(baseDir.dist, parsed.dir, parsed.base);
 
-    logger.log(`Deleted '${logger.string(parsed.base, 'yellow')}`, 'red');
+    logger.log(`Deleted '${logger.string(parsed.base, 'cyan')}'from '${logger.string(baseDir, 'yellow')}'`, 'red');
 
     del(distVer);
   });
