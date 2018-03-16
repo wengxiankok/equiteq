@@ -33,6 +33,6 @@ for(const glob in config.watch){
 if(config.proxy) options['proxy'] = config.proxy;
 else options['server'] = baseDir.dist;
 
-export function server(){
+export default function server(){
   browsersync.init(options);
 }

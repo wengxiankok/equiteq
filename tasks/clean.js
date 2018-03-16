@@ -7,7 +7,7 @@ import {logger}  from './utils';
 
 const source = baseDir.dist;
 
-export function clean(){
+export default function clean(){
   return del(source)
     .then(()=>{
       logger('Dist folder cleaned.', 'red');

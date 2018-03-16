@@ -24,7 +24,7 @@ const plugins = [
   svgo()
 ];
 
-export function images(){
+export default function images(){
   if(!production){
     logger('Skipping Images...', 'red');
     return gulp.src(source)

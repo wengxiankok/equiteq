@@ -17,7 +17,7 @@ import {baseDir}     from './configs';
 const source = path.posix.join(baseDir.src, baseDir.scripts.src);
 const dest   = path.posix.join(baseDir.dist, baseDir.scripts.dest);
 
-export function scripts() {
+export default function scripts() {
   return gulp.src(source)
     .pipe(stream(webpackConfig, webpack))
     .pipe(gulp.dest(dest));

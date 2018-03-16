@@ -35,7 +35,7 @@ const pluginsProduction = [
 const plugins = production ? pluginsProduction : pluginsDevolop;
 
 // Main Exported Task
-export function styles() {
+export default function styles() {
   return gulp.src(source)
     .pipe(sourcemaps.init())
       .pipe(sass(config.sass))

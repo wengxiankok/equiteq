@@ -20,7 +20,7 @@ config.extensions.forEach(ext => {
   source.push(p);
 });
 
-export function pages(){
+export default function pages(){
   return gulp.src(source)
     .pipe(strip())
     .pipe(gulp.dest(dest));
