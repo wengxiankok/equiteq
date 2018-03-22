@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import {baseDir} from './configs';
 
 // Define File Paths
-const source = baseDir.static;
+const source = `${baseDir.static}/**/*.*`;
 const dest   = baseDir.dist;
 
 export default function copy(){
