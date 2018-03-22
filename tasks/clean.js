@@ -17,7 +17,7 @@ class Clean{
   delete(toDelete = baseDir.dist){
     return del(toDelete)
       .then(()=>{
-        log.print(`Cleaned folder '${log.string(toDelete, 'magenta')}'.`, 'yellow');
+        log.print(`Cleaned: '${log.string(toDelete, 'magenta')}'`, 'yellow');
       });
   }
 }
