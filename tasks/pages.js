@@ -16,5 +16,3 @@ export default function pages(){
     .pipe(size())
     .pipe(gulp.dest(dest));
 }
-
-export const pSource = source;
