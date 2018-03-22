@@ -11,7 +11,7 @@ import svgo     from 'imagemin-svgo';
 
 /* ---- Import Configs ------------ */
 import {production, baseDir, configs} from './configs';
-import {logger} from './utils';
+import {log} from './utils';
 
 // Define File Paths
 const config = configs.images;
@@ -26,7 +26,7 @@ const plugins = [
 
 export default function images(){
   if(!production){
-    logger.print('Skipping Images...', 'red');
+    log.print('Skipping Images...', 'red');
     return gulp.src(source)
       .pipe(gulp.dest(dest));
   }

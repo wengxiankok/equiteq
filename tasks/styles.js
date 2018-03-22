@@ -11,12 +11,12 @@ import sourcemaps   from 'gulp-sourcemaps';
 
 /* ---- Import Configs ------------ */
 import {production, baseDir, configs} from './configs';
-import {size, joinPaths, generatePaths} from './utils';
+import {size, path} from './utils';
 
 // Define File Paths
 const config = configs.styles;
-const source = generatePaths(baseDir.styles.src, baseDir.src);
-const dest   = joinPaths(baseDir.dist, baseDir.styles.dest);
+const source = path.generate(baseDir.styles.src, baseDir.src);
+const dest   = path.join(baseDir.dist, baseDir.styles.dest);
 
 // Define Plugins
 const pluginsDevolop = [

@@ -3,13 +3,13 @@ import del       from 'del';
 
 /* ---- Import Configs ------------ */
 import {baseDir} from './configs';
-import {logger}  from './utils';
+import {log}     from './utils';
 
 const source = baseDir.dist;
 
 export default function clean(){
   return del(source)
     .then(()=>{
-      logger.print('Dist folder cleaned.', 'red');
+      log.print('Dist folder cleaned.', 'red');
     });
 }
