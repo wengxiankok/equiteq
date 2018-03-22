@@ -21,14 +21,15 @@ export const baseDir = {
   images: {
     src: 'img/**/*',
     dest: 'img/'
+  },
+
+  pages: {
+    src: ['**/*.html', '**/*.php'],
+    dest: '/'
   }
 };
 
 export const configs = {
-  pages : {
-    extensions: ['.html', '.php']
-  },
-
   styles: {
     sass: {
 

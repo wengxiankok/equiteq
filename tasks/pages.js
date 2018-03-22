@@ -1,24 +1,14 @@
-/* ---- Import Node.js Fuctions ---- */
-import path from 'path';
-
 /* ---- Import Gulp Modules -------- */
 import gulp from 'gulp';
 
 import strip from 'gulp-strip-comments';
 
 /* ---- Import Configs ------------ */
-import {baseDir, configs} from './configs';
+import {baseDir} from './configs';
+import {path} from './utils';
 
-// const source = path.posix.join(baseDir.src, baseDir.styles.src);
-
-const config = configs.pages;
-const source = [];
-const dest   = baseDir.dist;
-
-config.extensions.forEach(ext => {
-  const p = path.posix.join(baseDir.src, `**/*${ext}`);
-  source.push(p);
-});
+const source = path.generate(baseDir.src, baseDir.pages.src);
+const dest   = path.join(baseDir.dist, baseDir.pages.dest);
 
 export default function pages(){
   return gulp.src(source)
