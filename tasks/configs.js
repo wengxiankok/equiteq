@@ -38,7 +38,7 @@ export const configs = {
       debug: true
     },
     autoprefixer: {
-      browsers: ['last 2 version']
+      browsers: ['last 2 versions']
     }
   },
 
