@@ -28,6 +28,16 @@ export function join(...paths){
   return path.posix.join(...paths);
 }
 
+// Generate array of paths
+export function generatePaths(entries, source){
+  const arr = [];
+
+  if(typeof entries === 'string') return joinPaths(source, entries);
+  entries.forEach(s => arr.push(joinPaths(source, s)));
+
+  return arr;
+}
+
 // Logs out messages
 class Logger{
   print(message, color = 'white'){
