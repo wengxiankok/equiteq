@@ -9,16 +9,16 @@ import watcher from './tasks/watcher';
 
 /* ---- Import Configs ------------ */
 
-/* ---- Main Tasks ---------------- */
-gulp.task('dev');
-
-/* ---- Sub Tasks ----------------- */
-gulp.task('styles', gulp.series('clean-css', styles));
-gulp.task('pages', gulp.series('clean-pages', pages));
-
 /* ---- Private Tasks ------------- */
 gulp.task('clean-all', clean.all);
 gulp.task('clean-images', clean.images);
 gulp.task('clean-pages', clean.pages);
 gulp.task('clean-css', clean.css);
 gulp.task('clean-js', clean.js);
+
+/* ---- Sub Tasks ----------------- */
+gulp.task('styles', gulp.series('clean-css', styles));
+gulp.task('pages', gulp.series('clean-pages', pages));
+
+/* ---- Main Tasks ---------------- */
+gulp.task('dev');
