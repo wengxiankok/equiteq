@@ -1,6 +1,3 @@
-/* ---- Import Node.js Fuctions ---- */
-import path         from 'path';
-
 /* ---- Import NPM Modules --------- */
 import autoprefixer from 'autoprefixer';
 import postcssClean from 'postcss-clean';
@@ -14,12 +11,12 @@ import sourcemaps   from 'gulp-sourcemaps';
 
 /* ---- Import Configs ------------ */
 import {production, baseDir, configs} from './configs';
-import {size} from './utils';
+import {size, joinPaths, generatePaths} from './utils';
 
 // Define File Paths
 const config = configs.styles;
-const source = path.posix.join(baseDir.src, baseDir.styles.src);
-const dest   = path.posix.join(baseDir.dist, baseDir.styles.dest);
+const source = generatePaths(baseDir.styles.src, baseDir.src);
+const dest   = joinPaths(baseDir.dist, baseDir.styles.dest);
 
 // Define Plugins
 const pluginsDevolop = [
