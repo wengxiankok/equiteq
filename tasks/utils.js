@@ -36,7 +36,7 @@ class customPath{
     return nodePath.posix.join(...paths);
   }
 
-  generate(entries, source){
+  generate(source, entries){
     const arr = [];
 
     if(typeof entries === 'string') return this.join(source, entries);

@@ -15,7 +15,7 @@ import {size, path} from './utils';
 
 // Define File Paths
 const config = configs.styles;
-const source = path.generate(baseDir.styles.src, baseDir.src);
+const source = path.generate(baseDir.src, baseDir.styles.src);
 const dest   = path.join(baseDir.dist, baseDir.styles.dest);
 
 // Define Plugins
