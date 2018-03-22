@@ -1,30 +1,25 @@
-/* ---- Import Node.js Fuctions ---- */
-import path             from 'path';
-
-/* ---- Import NPM Modules --------- */
-import del              from 'del';
-
 /* ---- Import Gulp Modules -------- */
-import gulp             from 'gulp';
+import gulp        from 'gulp';
 
 /* ---- Import Tasks --------------- */
-import copy             from './copy';
-import styles           from './styles';
-import images           from './images';
-import scripts          from './scripts';
-import pages, {pSource} from './pages';
+import copy        from './copy';
+import clean       from './clean';
+import styles      from './styles';
+import images      from './images';
+import scripts     from './scripts';
+import pages       from './pages';
 
 /* ---- Import Configs ------------- */
-import {baseDir}        from './configs';
-import {joinPaths, logger}   from './utils';
+import {baseDir}   from './configs';
+import {path, log} from './utils';
 
 export default function watcher(){
   const watchers = {
-    pages:   gulp.watch(pSource, pages),
-    static:  gulp.watch(baseDir.static, copy),
-    images:  gulp.watch(joinPaths(baseDir.src, baseDir.images.src), images),
-    styles:  gulp.watch(joinPaths(baseDir.src, baseDir.styles.src), styles),
-    scripts: gulp.watch(joinPaths(baseDir.src, baseDir.scripts.src), scripts),
+    scripts: gulp.watch(path.generate(baseDir.src, baseDir.scripts.src), scripts),
+    styles:  gulp.watch(path.generate(baseDir.src, baseDir.styles.src), styles),
+    images:  gulp.watch(path.generate(baseDir.src, baseDir.images.src), images),
+    pages:   gulp.watch(path.generate(baseDir.src, baseDir.pages.src), pages),
+    static:  gulp.watch(path.join(baseDir.static), copy)
   };
 
 
@@ -33,27 +28,39 @@ export default function watcher(){
 
 function watchHandler(watcher){
   watcher.on('add', file => {
-    logger.print(`Detected '${logger.string('add', 'cyan')}' on '${logger.string(file, 'green')}'.`, 'yellow');
+    log.print(`Detected '${log.string('add', 'cyan')}' on '${log.string(file, 'green')}'.`, 'yellow');
   });
 
   watcher.on('change', file => {
-    logger.print(`Detected '${logger.string('change', 'cyan')}' on '${logger.string(file, 'green')}'.`, 'yellow');
+    log.print(`Detected '${log.string('change', 'cyan')}' on '${log.string(file, 'green')}'.`, 'yellow');
   });
 
   watcher.on('unlink', file => {
-    logger.print(`Detected '${logger.string('delete', 'red')}' on '${logger.string(file, 'green')}'. Removing file from '${logger.string(joinPaths(baseDir.dist), 'green')}'`, 'yellow');
+    log.print(`Detected '${log.string('delete', 'red')}' on '${log.string(file, 'green')}'. Removing file from '${log.string(path.join(baseDir.dist), 'green')}'`, 'yellow');
 
-    const regexp = new RegExp(baseDir.src.split('/').pop());
+    // check if file is from 'static' or 'source' folder
+    const regexp = file.indexOf('static') !== -1 ?
+                   new RegExp(baseDir.static.split('/').pop()) :
+                   new RegExp(baseDir.src.split('/').pop())
+                  ;
+
+    // switch path to 'dist' folder
     let distPath = file.replace(regexp, baseDir.dist);
-    let toDelete = path.posix.normalize(distPath);
+    let toDelete = path.native().posix.normalize(distPath);
 
-    // check if its a css file
+    // check if its a scss file
     if(file.indexOf('scss') !== -1){
       distPath = distPath.replace(/scss|sass/g, 'css');
       toDelete = [distPath, distPath.replace('.css', '.css.map')];
-      toDelete.forEach((t, i) => toDelete[i] = path.posix.normalize(t));
+      toDelete.forEach((t, i) => toDelete[i] = path.native().posix.normalize(t));
     }
 
-    del(toDelete);
+    // check if its a css file
+    else if(file.indexOf('css') !== -1){
+      toDelete = [distPath, distPath.replace('.css', '.css.map')];
+      toDelete.forEach((t, i) => toDelete[i] = path.native().posix.normalize(t));
+    }
+
+    clean.delete(toDelete);
   });
 }
