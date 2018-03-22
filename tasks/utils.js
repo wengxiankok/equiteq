@@ -24,7 +24,7 @@ export function size(){
 }
 
 // Standardized 'path.posix.join' function
-export function join(...paths){
+export function joinPaths(...paths){
   return path.posix.join(...paths);
 }
 

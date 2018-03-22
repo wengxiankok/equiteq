@@ -16,15 +16,15 @@ import pages, {pSource} from './pages';
 
 /* ---- Import Configs ------------- */
 import {baseDir}        from './configs';
-import {join, logger}   from './utils';
+import {joinPaths, logger}   from './utils';
 
 export default function watcher(){
   const watchers = {
     pages:   gulp.watch(pSource, pages),
     static:  gulp.watch(baseDir.static, copy),
-    images:  gulp.watch(join(baseDir.src, baseDir.images.src), images),
-    styles:  gulp.watch(join(baseDir.src, baseDir.styles.src), styles),
-    scripts: gulp.watch(join(baseDir.src, baseDir.scripts.src), scripts),
+    images:  gulp.watch(joinPaths(baseDir.src, baseDir.images.src), images),
+    styles:  gulp.watch(joinPaths(baseDir.src, baseDir.styles.src), styles),
+    scripts: gulp.watch(joinPaths(baseDir.src, baseDir.scripts.src), scripts),
   };
 
 
@@ -41,7 +41,7 @@ function watchHandler(watcher){
   });
 
   watcher.on('unlink', file => {
-    logger.print(`Detected '${logger.string('delete', 'red')}' on '${logger.string(file, 'green')}'. Removing file from '${logger.string(join(baseDir.dist), 'green')}'`, 'yellow');
+    logger.print(`Detected '${logger.string('delete', 'red')}' on '${logger.string(file, 'green')}'. Removing file from '${logger.string(joinPaths(baseDir.dist), 'green')}'`, 'yellow');
 
     const regexp = new RegExp(baseDir.src.split('/').pop());
     let distPath = file.replace(regexp, baseDir.dist);
