@@ -62,14 +62,5 @@ export const configs = {
       scripts: 'js/**/*.js',
     },
     options: {}
-  },
-
-  watcher: {
-    remove: true,
-    files: {
-      scripts: true,
-      images: true,
-      styles: true
-    }
   }
 };
