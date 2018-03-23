@@ -3,6 +3,7 @@ import path     from 'path';
 
 /* ---- Import Gulp Modules -------- */
 import gulp     from 'gulp';
+import newer    from 'gulp-newer';
 
 import imagemin from 'gulp-imagemin';
 import mozjpeg  from 'imagemin-mozjpeg';
@@ -11,7 +12,7 @@ import svgo     from 'imagemin-svgo';
 
 /* ---- Import Configs ------------ */
 import {production, baseDir, configs} from './configs';
-import {log} from './utils';
+import {log, size} from './utils';
 
 // Define File Paths
 const config = configs.images;
@@ -28,10 +29,13 @@ export default function images(){
   if(!production){
     log.print('Skipping image optimization...', 'red');
     return gulp.src(source)
+      .pipe(newer(dest))
+      .pipe(size())
       .pipe(gulp.dest(dest));
   }
 
   return gulp.src(source)
+  .pipe(newer(dest))
     .pipe(imagemin(plugins, config.options))
     .pipe(gulp.dest(dest));
 }
