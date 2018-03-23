@@ -1,5 +1,5 @@
-<img align="center" src="logo.png" alt="Why Hello There">
-<p align="center"> The Modern Front-End Dev Boilerplate. </p>
+![Why Hello There!](logo.png)  
+The Modern Front-End Dev Boilerplate.
 
 ## What is Boilr
 'Boilr' is a front-end boilerplate built to make starting a new project a painless experience.
