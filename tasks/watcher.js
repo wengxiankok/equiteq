@@ -27,17 +27,11 @@ export default function watcher(){
 }
 
 function watchHandler(watcher){
-  watcher.on('add', file => {
-    log.print(`Detected '${log.string('add', 'cyan')}' on '${log.string(file, 'green')}'.`, 'yellow');
-  });
-
-  watcher.on('change', file => {
-    log.print(`Detected '${log.string('change', 'cyan')}' on '${log.string(file, 'green')}'.`, 'yellow');
+  watcher.on('all', (event, file) =>{
+    log.print(`Detected '${log.string(event, 'cyan')}' on '${log.string(file, 'green')}'.`, 'yellow');
   });
 
   watcher.on('unlink', file => {
-    log.print(`Detected '${log.string('delete', 'red')}' on '${log.string(file, 'green')}'. Removing file from '${log.string(path.join(baseDir.dist), 'green')}'`, 'yellow');
-
     // check if file is from 'static' or 'source' folder
     const regexp = file.indexOf('static') !== -1 ?
                    new RegExp(baseDir.static.split('/').pop()) :

@@ -13,7 +13,7 @@ export function size(){
     const name = file.relative;
     const size = file.contents.length;
 
-    log.print(`Output: ${log.string(name, 'green')}[${log.string(filesize(size), 'magenta')}]`, 'yellow');
+    log.print(`Output : '${log.string(name, 'green')}[${log.string(filesize(size), 'magenta')}]'`, 'yellow');
 
     cb(null, file);
   });
