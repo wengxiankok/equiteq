@@ -1,5 +1,5 @@
-[](./logo.png)
-<p align="center">The Modern Front-End Dev Boilerplate.</p>
+<img align="center" src="logo.png" alt="Why Hello There">
+<p align="center"> The Modern Front-End Dev Boilerplate. </p>
 
 ## What is Boilr
 'Boilr' is a front-end boilerplate built to make starting a new project a painless experience.
