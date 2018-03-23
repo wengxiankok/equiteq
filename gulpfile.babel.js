@@ -1,4 +1,6 @@
 import gulp    from 'gulp';
+
+import './tasks/hello';
 import styles  from './tasks/styles';
 import images  from './tasks/images';
 import scripts from './tasks/scripts';
