@@ -11,7 +11,7 @@ const source = path.generate(baseDir.src, baseDir.pages.src);
 const dest   = path.join(baseDir.dist, baseDir.pages.dest);
 
 export default function pages(){
-  return gulp.src(source)
+  return gulp.src(source, {since: gulp.lastRun(pages)})
     .pipe(strip())
     .pipe(size())
     .pipe(gulp.dest(dest));

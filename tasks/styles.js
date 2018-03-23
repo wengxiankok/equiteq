@@ -33,7 +33,7 @@ const plugins = production ? pluginsProduction : pluginsDevolop;
 
 // Main Exported Task
 export default function styles() {
-  return gulp.src(source)
+  return gulp.src(source, {since: gulp.lastRun(styles)})
     .pipe(sourcemaps.init())
       .pipe(sass(config.sass))
       .pipe(postcss(plugins))
