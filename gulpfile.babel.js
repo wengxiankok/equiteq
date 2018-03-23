@@ -4,6 +4,7 @@ import images  from './tasks/images';
 import scripts from './tasks/scripts';
 import pages   from './tasks/pages';
 import server  from './tasks/server';
+import copy    from './tasks/copy';
 import clean   from './tasks/clean';
 import watcher from './tasks/watcher';
 
@@ -20,5 +21,8 @@ gulp.task('clean-js', clean.js);
 gulp.task('styles', gulp.series('clean-css', styles));
 gulp.task('pages', gulp.series('clean-pages', pages));
 
+gulp.task('build', gulp.series('clean-all', gulp.parallel(pages, styles, scripts, images, copy)));
+gulp.task('watcher', gulp.series('build', watcher));
+
 /* ---- Main Tasks ---------------- */
-gulp.task('dev');
+gulp.task('dev', gulp.parallel('build', watcher, server));
