@@ -1,48 +1,48 @@
-# Boilr
-A Modern Boilerplate to kickstart your next Front-End Project.
-***
+[](./logo.png)
+<p align="center">The Modern Front-End Dev Boilerplate.</p>
+
+## What is Boilr
+'Boilr' is a front-end boilerplate built to make starting a new project a painless experience.
+
+## Features
+- **SASS** - Make writing CSS fun again.
+- **Webpack** - Bundle up your JavaScript.
+- **Babel + ES6** - Take advantage of the latest JavaScript features.
+- **Image Optimizer** - Optimize images for improved site load times.
+- **Local Server with BrowserSync** - Develop locally with support for live reloading, style injection and proxy servers support.
 
 ## How To Use
-##### 1. Develop
-Starts a local server with browserSync.
+Boilr can be quickly started up in development mode using:
 ```bash
-$ gulp dev
+gulp dev
 ```
 
-##### 2. Build
-Only rebuilds files without starting a server.
+to use production mode just add a '-p' flag as such:
 ```bash
-$ gulp build
+gulp dev -p
 ```
 
-#### Special Flags
-Use these in conjunction with the tasks above.
-
-Example:
+## Documentation
+### Folder Structure
+Boilr comes with a default folder structure that is already configured to just work instantly.
 ```bash
-gulp dev --production --quick
-```
-
-#### 1. Production Environment
-Minifies and uglifies assets.
-```bash
-# Either the full word ..
---production
-# .. or this
--p
-```
-
-#### 2. Quick Start
-Skips minifying images to start server faster.
-```bash
-# Either the full word ..
---quick
-# .. or this
--q
-```
-
-#### 3. PHP Mode
-Sets the watcher to watch for `.php` instead.
-```bash
---php
+Boilr
+│  # Main folder for source files
+├─ src/
+│  ├─ sass           # scss
+│  ├─ img            # images
+│  ├─ js             # javascript
+│  └─ index.html
+│  
+├─ static/           # Folder for static assets that do not need processing
+├─ dist/             # Final output folder
+│  
+│  # Configuration Files
+├─ tasks/
+├─ .babelrc
+├─ .eslint.json
+├─ .gitignore
+├─ package.json
+├─ gulpfile.babel.js
+├─ webpack.config.js
 ```
