@@ -62,5 +62,14 @@ export const configs = {
       scripts: 'js/**/*.js',
     },
     options: {}
+  },
+
+  ftp: {
+    host: '',
+    user: '',
+    port: '',
+    password: '',
+    directory: '',
+    secure: true
   }
 };

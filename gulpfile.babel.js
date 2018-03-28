@@ -8,11 +8,13 @@ import pages   from './tasks/pages';
 import server  from './tasks/server';
 import copy    from './tasks/copy';
 import clean   from './tasks/clean';
+import deploy  from './tasks/deploy';
 import watcher from './tasks/watcher';
 
 /* ---- Import Configs ------------ */
 
 /* ---- Private Tasks ------------- */
+gulp.task(deploy);
 gulp.task('clean-all', clean.all);
 gulp.task('clean-images', clean.images);
 gulp.task('clean-pages', clean.pages);
