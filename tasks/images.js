@@ -1,6 +1,3 @@
-/* ---- Import Node.js Fuctions ---- */
-import path     from 'path';
-
 /* ---- Import Gulp Modules -------- */
 import gulp     from 'gulp';
 import newer    from 'gulp-newer';
@@ -12,12 +9,12 @@ import svgo     from 'imagemin-svgo';
 
 /* ---- Import Configs ------------ */
 import {production, baseDir, configs} from './configs';
-import {log, size} from './utils';
+import {log, path, size} from './utils';
 
 // Define File Paths
 const config = configs.images;
-const source = path.posix.join(baseDir.src, baseDir.images.src);
-const dest   = path.posix.join(baseDir.dist, baseDir.images.dest);
+const source = path.join(baseDir.src, baseDir.images.src);
+const dest   = path.join(baseDir.dist, baseDir.images.dest);
 
 const plugins = [
   mozjpeg({ quality: config.quality.jpeg }),
