@@ -4,6 +4,7 @@ import postcssClean from 'postcss-clean';
 
 /* ---- Import Gulp Modules -------- */
 import gulp         from 'gulp';
+import plumber      from 'gulp-plumber';
 
 import sass         from 'gulp-sass';
 import postcss      from 'gulp-postcss';
@@ -11,7 +12,7 @@ import sourcemaps   from 'gulp-sourcemaps';
 
 /* ---- Import Configs ------------ */
 import {production, baseDir, configs} from './configs';
-import {size, path} from './utils';
+import {size, path, log} from './utils';
 
 // Define File Paths
 const config = configs.styles;
@@ -35,7 +36,9 @@ const plugins = production ? pluginsProduction : pluginsDevolop;
 export default function styles() {
   return gulp.src(source, {since: gulp.lastRun(styles)})
     .pipe(sourcemaps.init())
+      .pipe(plumber())
       .pipe(sass(config.sass))
+        .on('error', error => log.print(`\n \n ${error.formatted}`, 'red'))
       .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
     .pipe(size())
