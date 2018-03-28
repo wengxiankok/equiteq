@@ -15,6 +15,8 @@ import watcher from './tasks/watcher';
 
 /* ---- Private Tasks ------------- */
 gulp.task(deploy);
+gulp.task(scripts);
+
 gulp.task('clean-all', clean.all);
 gulp.task('clean-images', clean.images);
 gulp.task('clean-pages', clean.pages);

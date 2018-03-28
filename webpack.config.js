@@ -1,11 +1,12 @@
-const path = require('path');
-// import path from 'path';
-// import webpack from 'webpack';
+import yargs   from 'yargs';
+import path    from 'path';
+import webpack from 'webpack';
 
-// import {env} from './tasks/configs';
+export const env = yargs.argv.p ? 'production' : 'development';
+export const production = env === 'production' ? true : false;
 
 module.exports = {
-  mode: 'development',
+  mode: env,
   entry: path.posix.join(__dirname, './src/js/app.js'),
   output: {
     filename: '[name].js'
