@@ -14,8 +14,13 @@ import watcher from './tasks/watcher';
 /* ---- Import Configs ------------ */
 
 /* ---- Private Tasks ------------- */
-gulp.task(deploy);
 gulp.task(scripts);
+gulp.task(deploy);
+gulp.task(images);
+gulp.task(styles);
+gulp.task(pages);
+gulp.task(clean);
+gulp.task(copy);
 
 gulp.task('clean-all', clean.all);
 gulp.task('clean-images', clean.images);
