@@ -35,8 +35,8 @@ const plugins = production ? pluginsProduction : pluginsDevolop;
 // Main Exported Task
 export default function styles() {
   return gulp.src(source, {since: gulp.lastRun(styles)})
+    .pipe(plumber())
     .pipe(sourcemaps.init())
-      .pipe(plumber())
       .pipe(sass(config.sass))
         .on('error', error => log.print(`\n \n ${error.formatted}`, 'red'))
       .pipe(postcss(plugins))
