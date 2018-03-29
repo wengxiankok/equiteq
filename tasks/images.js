@@ -32,7 +32,7 @@ export default function images(){
   }
 
   return gulp.src(source)
-  .pipe(newer(dest))
+    .pipe(newer(dest))
     .pipe(imagemin(plugins, config.options))
     .pipe(gulp.dest(dest));
 }
