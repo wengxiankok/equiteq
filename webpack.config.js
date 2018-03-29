@@ -7,7 +7,9 @@ export const production = env === 'production' ? true : false;
 
 module.exports = {
   mode: env,
-  entry: path.posix.join(__dirname, './src/js/app.js'),
+  entry: {
+    app: path.posix.join(__dirname, './src/js/app.js')
+  },
   output: {
     filename: '[name].js'
   },
