@@ -4,6 +4,7 @@ import postcssClean from 'postcss-clean';
 
 /* ---- Import Gulp Modules -------- */
 import gulp         from 'gulp';
+import newer        from 'gulp-newer';
 import plumber      from 'gulp-plumber';
 
 import sass         from 'gulp-sass';
@@ -34,8 +35,9 @@ const plugins = production ? pluginsProduction : pluginsDevolop;
 
 // Main Exported Task
 export default function styles() {
-  return gulp.src(source, {since: gulp.lastRun(styles)})
+  return gulp.src(source)
     .pipe(plumber())
+    .pipe(newer(dest))
     .pipe(sourcemaps.init())
       .pipe(sass(config.sass))
         .on('error', error => log.print(`\n \n ${error.formatted}`, 'red'))
