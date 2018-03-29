@@ -36,13 +36,16 @@ const plugins = production ? pluginsProduction : pluginsDevolop;
 // Main Exported Task
 export default function styles() {
   return gulp.src(source)
-    .pipe(plumber())
     .pipe(newer(dest))
+    .pipe(plumber(function(error) {
+      log.print(`\n \n ${error.formatted}`, 'red');
+      this.emit('end');
+    }))
     .pipe(sourcemaps.init())
       .pipe(sass(config.sass))
-        .on('error', error => log.print(`\n \n ${error.formatted}`, 'red'))
       .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
     .pipe(size())
+    .pipe(plumber.stop())
     .pipe(gulp.dest(dest));
 }
