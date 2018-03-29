@@ -36,4 +36,4 @@ gulp.task('build', gulp.series('clean-all', gulp.parallel(pages, styles, scripts
 gulp.task('watcher', gulp.series('build', watcher));
 
 /* ---- Main Tasks ---------------- */
-gulp.task('dev', gulp.parallel('build', watcher, server));
+gulp.task('dev', gulp.series('build', gulp.parallel(watcher, server)));
