@@ -1,6 +1,6 @@
 /* ---- Import NPM Modules --------- */
 import autoprefixer from 'autoprefixer';
-import postcssClean from 'postcss-clean';
+import cssnano      from 'cssnano';
 
 /* ---- Import Gulp Modules -------- */
 import gulp         from 'gulp';
@@ -22,12 +22,12 @@ const dest   = path.join(baseDir.dist, baseDir.styles.dest);
 
 // Define Plugins
 const pluginsDevolop = [
-  postcssClean(config.cleanCSS)
+  autoprefixer(config.autoprefixer),
 ];
 
 const pluginsProduction = [
-  autoprefixer(config.autoprefixer),
-  postcssClean(config.cleanCSS)
+  cssnano(config.cssnano),
+  autoprefixer(config.autoprefixer)
 ];
 
 // Toggle Plugins

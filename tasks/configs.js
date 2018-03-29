@@ -34,9 +34,8 @@ export const configs = {
     sass: {
 
     },
-    cleanCSS: {
-      level: 1,
-      debug: true
+    cssnano: {
+      preset: 'default'
     },
     autoprefixer: {
       browsers: ['last 2 versions']
