@@ -10,6 +10,11 @@ import filesize from 'filesize';
 // Prints out size of streamed files
 export function size(){
   return through.obj((file, enc, cb)=> {
+    if(file.contents === null){
+      cb(null, file);
+      return;
+    }
+
     const name = file.relative;
     const size = file.contents.length;
 
