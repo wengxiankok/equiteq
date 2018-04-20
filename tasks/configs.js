@@ -52,12 +52,7 @@ export const configs = {
 
   browsersync: {
     proxy: false,
-    watch: {
-      pages: ['**/*.html', '**/*.php'],
-      styles: 'css/**/*.css',
-      images: 'img/**/*.*',
-      scripts: 'js/**/*.js',
-    },
+    watch: '**/*.*',
     options: {}
   },
 

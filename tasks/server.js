@@ -20,12 +20,8 @@ for(const opt in config.options){
 }
 
 // generate array of file paths to watch
-for(const glob in config.watch){
-  const g = config.watch[glob];
-
-  if(typeof g === 'object') g.forEach(i => watchFiles.push(path.join(baseDir.dist, i)));
-  else watchFiles.push(path.join(baseDir.dist, g));
-}
+if(typeof config.watch == 'string') watchFiles.push(path.join(baseDir.dist, config.watch));
+else if(typeof config.watch == 'object') config.watch.forEach(p => watchFiles.push(path.join(baseDir.dist, p)));
 
 // create proxy or static server
 if(config.proxy) options['proxy'] = config.proxy;
