@@ -15,6 +15,9 @@ const source = path.join(baseDir.src, baseDir.scripts.src);
 const dest   = path.join(baseDir.dist, baseDir.scripts.dest);
 
 export default function scripts() {
+  // check if watching is needed
+  if(process.argv.indexOf('dev') !== -1 || process.argv.indexOf('watcher') !== -1) webpackConfig.watch = true;
+
   return gulp.src(source)
     .pipe(stream(webpackConfig, webpack))
     .pipe(gulp.dest(dest));

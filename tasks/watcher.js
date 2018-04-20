@@ -6,7 +6,6 @@ import copy        from './copy';
 import clean       from './clean';
 import styles      from './styles';
 import images      from './images';
-import scripts     from './scripts';
 import pages       from './pages';
 
 /* ---- Import Configs ------------- */
@@ -15,7 +14,6 @@ import {path, log} from './utils';
 
 export default function watcher(){
   const watchers = {
-    scripts: gulp.watch(path.generate(baseDir.src, baseDir.scripts.src), scripts),
     styles:  gulp.watch(path.generate(baseDir.src, baseDir.styles.src), styles),
     images:  gulp.watch(path.generate(baseDir.src, baseDir.images.src), images),
     pages:   gulp.watch(path.generate(baseDir.src, baseDir.pages.src), pages),

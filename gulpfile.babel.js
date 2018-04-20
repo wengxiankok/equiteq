@@ -32,8 +32,8 @@ gulp.task('pages', gulp.series('clean-pages', pages));
 gulp.task('styles', gulp.series('clean-css', styles));
 gulp.task('pages', gulp.series('clean-pages', pages));
 
-gulp.task('build', gulp.series('clean-all', gulp.parallel(pages, styles, scripts, images, copy)));
-gulp.task('watcher', gulp.series('build', watcher));
+gulp.task('build', gulp.series('clean-all', gulp.parallel(pages, styles, images, copy)));
+gulp.task('watcher', gulp.series('build', gulp.parallel(watcher, scripts)));
 
 /* ---- Main Tasks ---------------- */
-gulp.task('dev', gulp.series('build', gulp.parallel(watcher, server)));
+gulp.task('dev', gulp.series('build', gulp.parallel(watcher, scripts, server)));
