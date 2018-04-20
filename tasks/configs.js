@@ -1,6 +1,4 @@
-import yargs from 'yargs';
-
-export const env = yargs.argv.p ? 'production' : 'development';
+export const env = process.argv.indexOf('-p') !== -1 ? 'production' : 'development';
 export const production = env === 'production' ? true : false;
 
 export const baseDir = {
