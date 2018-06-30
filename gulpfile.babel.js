@@ -32,7 +32,7 @@ gulp.task('pages', gulp.series('clean:pages', pages));
 gulp.task('styles', gulp.series('clean:css', styles));
 gulp.task('pages', gulp.series('clean:pages', pages));
 
-gulp.task('build', gulp.series('clean:all', gulp.parallel(pages, styles, images, copy)));
+gulp.task('build', gulp.series('clean:all', gulp.parallel(pages, styles, images, copy, scripts)));
 gulp.task('watcher', gulp.series('build', gulp.parallel(watcher, scripts)));
 
 /* ---- Main Tasks ---------------- */
