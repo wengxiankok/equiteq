@@ -14,7 +14,7 @@ module.exports = {
   mode: env,
   entry: {
     app: path.posix.join(__dirname, './src/js/app.js'),
-    vendor: [],
+    // vendor: [],
   },
   output: {
     path: path.join(__dirname, 'dist', 'js'),
@@ -39,17 +39,17 @@ module.exports = {
     ]
   },
   optimization: {
-    splitChunks: {
-      cacheGroups: {
-        /** Split vendor chunk */
-        vendor: {
-          chunks: 'initial',
-          name: 'vendor',
-          test: 'vendor',
-          enforce: true
-        }
-      }
-    }
+    // splitChunks: {
+    //   cacheGroups: {
+    //     /** Split vendor chunk */
+    //     vendor: {
+    //       chunks: 'initial',
+    //       name: 'vendor',
+    //       test: 'vendor',
+    //       enforce: true
+    //     }
+    //   }
+    // }
   },
   plugins: [
     /** Expose compile time variables */
