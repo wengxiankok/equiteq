@@ -1,5 +1,5 @@
 /* ---- Import NPM Modules --------- */
-const package = require('./../package.json');
+const pkg = require('./../package.json');
 
 /* ---- Import Configs ------------- */
 import {env} from './configs';
@@ -11,7 +11,7 @@ const title = String.raw`
  | |_) | ___  _| |_ __
  |  _ < / _ \| | | '__|
  | |_) | (_) | | | |
- |____/ \___/|_|_|_|  v${package.version}
+ |____/ \___/|_|_|_|  v${pkg.version}
 
 `;
 
