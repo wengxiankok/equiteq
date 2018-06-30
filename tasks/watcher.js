@@ -20,8 +20,7 @@ export default function watcher(){
     static:  gulp.watch(path.join(baseDir.static), copy)
   };
 
-
-  for(const watch in watchers)  watchHandler(watchers[watch]);
+  for(const watch in watchers) watchHandler(watchers[watch]);
 }
 
 function watchHandler(watcher){
