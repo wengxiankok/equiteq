@@ -7,6 +7,7 @@ import clean       from './clean';
 import styles      from './styles';
 import images      from './images';
 import pages       from './pages';
+import svg       from './svg';
 
 /* ---- Import Configs ------------- */
 import {baseDir}   from './configs';
@@ -17,7 +18,8 @@ export default function watcher(){
     styles:  gulp.watch(path.generate(baseDir.src, baseDir.styles.src), styles),
     images:  gulp.watch(path.generate(baseDir.src, baseDir.images.src), images),
     pages:   gulp.watch(path.generate(baseDir.src, baseDir.pages.src), pages),
-    static:  gulp.watch(path.join(baseDir.static), copy)
+    static:  gulp.watch(path.join(baseDir.static), copy),
+    svg:     gulp.watch(path.join(baseDir.src, baseDir.svg.src), svg),
   };
 
   for(const watch in watchers) watchHandler(watchers[watch]);
