@@ -68,5 +68,9 @@ export const configs = {
     password: '',
     directory: '',
     secure: true
-  }
+  },
+
+  svg: {
+    prefix: 'icon-',
+  },
 };
