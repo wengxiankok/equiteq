@@ -24,6 +24,11 @@ export const baseDir = {
   pages: {
     src: ['**/*.html', '**/*.php'],
     dest: '/'
+  },
+
+  svg: {
+    src: 'svg/**/*.svg',
+    dest: 'svg/'
   }
 };
 
@@ -63,5 +68,9 @@ export const configs = {
     password: '',
     directory: '',
     secure: true
-  }
+  },
+
+  svg: {
+    prefix: 'icon-',
+  },
 };

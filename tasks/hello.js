@@ -1,5 +1,5 @@
 /* ---- Import NPM Modules --------- */
-const pck = require('./../package.json');
+const pkg = require('./../package.json');
 
 /* ---- Import Configs ------------- */
 import {env} from './configs';
@@ -11,17 +11,14 @@ const title = String.raw`
  | |_) | ___  _| |_ __
  |  _ < / _ \| | | '__|
  | |_) | (_) | | | |
- |____/ \___/|_|_|_|  v${pck.version}
+ |____/ \___/|_|_|_|  v${pkg.version}
 
 `;
 
 const msg = log.string(`
-  ${log.string('----------------------------', 'gray')}
-  ${log.string('-----------------------', 'gray')}
   ${title}
   Environment: '${log.string(env.toUpperCase(), 'yellow')}'
-  ${log.string('-----------------------', 'gray')}
-  ${log.string('----------------------------', 'gray')}
-  `, 'green');
+  `, 'green'
+);
 
-  console.log(msg);
+console.log(msg);
