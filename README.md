@@ -32,7 +32,7 @@ $ ./firestarter-init.sh
 $ rm -rf .git
 ```
 
-## Folder Structure
+## Folder structure
 The WordPress folder structure has been reorganised for a better developer experience and for better integration with version control systems.
 
 The biggest change is the movement of `wp-content` into an upper directory, and
@@ -48,3 +48,17 @@ www/                   # → The document root
   │    └── uploads/    # → Uploads directory. Do not commit.
   └── wp-core/         # → WordPress core files. Do not edit.
 ```
+
+## Migrating an existing project
+Despite the change in folder structure, migrating an existing project is 
+relatively straightforward. You just need to shift the folders around for
+a little bit.
+
+1. Clone this repository
+2. Copy your existing site as-is into `wp-core`
+3. Move your existing `wp-content` folder into one directory up
+4. Delete any existing `wp-config.php` file in `wp-core`
+5. Run the `./firestarter-init.sh` installation script
+6. Migrate the existing database into your local Forefather server. You have the following options:
+    * Use any one of the many WordPress migration plugins
+    * Manually export the existing database, and import using [adminer](http://adminer.local.ffshost.com).
