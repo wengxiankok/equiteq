@@ -8,8 +8,10 @@ site=${PWD##*/}
 
 # Call composer install if wp-core hasn't been downloaded
 if [ ! -e www/wp-core ]; then
-  if ! type "composer" > /dev/null; then
-    printf "\033[91m\033[1m%s:\033[39m\033[0m Please install 'composer' first.\n" "Error" $1
+  if ! type "composer" > /dev/null 2>&1 ; then
+    printf "\033[93m\033[1m%s:\033[39m\033[0m Running composer through Vagrant. Please install 'composer' in the future.\n" "Warning" $1
+    cmd="composer install --working-dir=\"\${FOREFRONT_SITES_DIR}/$site\""
+    vagrant ssh -c "$cmd"
   else
     composer install
   fi
