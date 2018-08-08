@@ -21,7 +21,7 @@ const source = path.generate(baseDir.src, baseDir.styles.src);
 const dest   = path.join(baseDir.dist, baseDir.styles.dest);
 
 // Define Plugins
-const pluginsDevolop = [
+const pluginsDevelop = [
   autoprefixer(config.autoprefixer),
 ];
 
@@ -30,11 +30,8 @@ const pluginsProduction = [
   autoprefixer(config.autoprefixer)
 ];
 
-// Toggle Plugins
-const plugins = production ? pluginsProduction : pluginsDevolop;
-
 // Main Exported Task
-export default function styles() {
+function stylesDevelop(){
   return gulp.src(source)
     .pipe(newer(dest))
     .pipe(plumber(function(error) {
@@ -43,9 +40,27 @@ export default function styles() {
     }))
     .pipe(sourcemaps.init())
       .pipe(sass(config.sass))
-      .pipe(postcss(plugins))
+      .pipe(postcss(pluginsDevelop))
     .pipe(sourcemaps.write('.'))
     .pipe(size())
     .pipe(plumber.stop())
     .pipe(gulp.dest(dest));
 }
+
+function stylesProduction(){
+  return gulp.src(source)
+    .pipe(newer(dest))
+    .pipe(plumber(function(error) {
+      log.print(`\n \n ${error.formatted}`, 'red');
+      this.emit('end');
+    }))
+    .pipe(sass(config.sass))
+    .pipe(postcss(pluginsProduction))
+    .pipe(size())
+    .pipe(plumber.stop())
+    .pipe(gulp.dest(dest));
+}
+
+const styles = production ? stylesProduction : stylesDevelop;
+
+export default styles;
