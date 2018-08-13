@@ -13,7 +13,7 @@ import watcher from './tasks/watcher';
 import svg     from './tasks/svg';
 
 /* ---- Private Tasks ------------- */
-gulp.task('clean', clean.all);
+gulp.task('clean:all', clean.all);
 gulp.task('clean:images', clean.images);
 gulp.task('clean:pages', clean.pages);
 gulp.task('clean:css', clean.css);
@@ -24,6 +24,7 @@ gulp.task(deploy);
 gulp.task(copy);
 gulp.task(svg);
 
+gulp.task('clean', gulp.series('clean:all'));
 gulp.task('scripts', gulp.series('clean:js', scripts));
 gulp.task('styles', gulp.series('clean:css', styles));
 gulp.task('images', gulp.series('clean:images', images, svg));
