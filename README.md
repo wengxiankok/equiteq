@@ -22,6 +22,7 @@ and
 ```bash
 $ gulp dev          # Starts local development server
 ```
+&nbsp;
 ##### Building for production
 To build for production, just add the `-p` flag to the end.
 ```bash
@@ -29,8 +30,8 @@ $ gulp dev -p       # Starts local development server with production assets
 ```
 ```bash
 $ gulp build -p     # Builds production ready assets
-```
-
+```  
+&nbsp;
 ##### Working with a dev server / proxy
 In the case when you need to work off a development server, change the proxy value to you development server address.
 ```js
@@ -88,36 +89,40 @@ Usable by typing as such.
 $ gulp <task name>
 ```
 
-##### Main Tasks
-#### `dev`
+#### Main Tasks
+##### `dev`
 Starts a development local server with auto-reloading and CSS injection.
-#### `build`
+##### `build`
 Builds all assets.
 
-##### Individual Tasks
-#### `watcher`
+&nbsp;
+#### Single Tasks
+##### `watcher`
 Starts only the file watcher to work without a server.
-#### `deploy`
+##### `deploy`
 Uploads files to specified FTP server.
-#### `pages`
+##### `pages`
 Builds HTML and PHP files.
-#### `styles`
+##### `styles`
 Builds stylesheets and applies Autoprefixer and CSSNano.
-#### `scripts`
+##### `scripts`
 Bundles JavaScript with Webpack.
 #### `images`
 Optimizes images.
-#### `svg`
+##### `svg`
 Generates SVG sprite sheets.
-#### `copy`
+##### `copy`
 Copies files from `static` to `dist`.
-#### `clean:all`
+
+&nbsp;
+#### Cleaner Tasks
+##### `clean:all`
 Deletes all files in `dist`.
-#### `clean:images`
+##### `clean:images`
 Deletes only images.
-#### `clean:css`
+##### `clean:css`
 Deletes only `styles` folder.
-#### `clean:pages`
+##### `clean:pages`
 Deletes only pages.
-#### `clean:js`
+##### `clean:js`
 Deletes only `scripts` folder.
