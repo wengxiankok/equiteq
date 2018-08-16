@@ -39,7 +39,7 @@ The biggest change is the movement of `wp-content` into an upper directory, and
 moving the WordPress core files into its own subdirectory, `wp-core`.
 
 ```bash
-www/                   # → The document root
+public/                   # → The document root
   ├── index.php
   ├── wp-config.php    # → WordPress configuration. Do not need to edit unless it's production.
   ├── wp-content/

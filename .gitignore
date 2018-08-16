@@ -1,15 +1,15 @@
 vendor
 
 # WordPress files
-www/wp-core
-www/wp-config.php
-www/wp-content/themes/*
-www/wp-content/uploads/*
+public/wp-core
+public/wp-config.php
+public/wp-content/themes/*
+public/wp-content/uploads/*
 
 # [Whitelist] WordPress files
-!www/wp-content/themes/index.php
-!www/wp-content/uploads/index.php
-!www/wp-content/themes/firestarter-default
+!public/wp-content/themes/index.php
+!public/wp-content/uploads/index.php
+!public/wp-content/themes/firestarter-default
 
 # OS generated files
 .DS_Store
