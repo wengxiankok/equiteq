@@ -1,9 +1,9 @@
 # Firestarter
 Firestarter is a WordPress stack and folder structure that is optimised for
-modern development tools and best practices.
+build tools and best practices.
 
 Together with the [Forefather](https://git.forefront.com.my/websites/forefather)
-development server, Firestarter allows you to quickly start up new WordPress
+development server, Firestarter allows you to quickly set up new WordPress
 based projects with minimal effort and zero configuration.
 
 ## Features
@@ -19,7 +19,7 @@ Make sure you have the following dependencies before continuing:
 
 ## Usage
 ```bash
-# 1. Clone this repository into the forefather `sites/` directory
+# 1. Download this repository or clone it into the forefather `sites/` directory
 $ git clone https://git.forefront.com.my/websites/firestarter.git <project_name>
 
 # 2. Enter the directory
@@ -33,14 +33,15 @@ $ rm -rf .git
 ```
 
 ## Folder structure
-The WordPress folder structure has been reorganised for a better developer experience and for better integration with version control systems.
+The WordPress folder structure has been reorganised for better developer
+experience and better integration with version control systems.
 
 The biggest change is the movement of `wp-content` into an upper directory, and
 moving the WordPress core files into its own subdirectory, `wp-core`.
 
 ```bash
-public/                   # → The document root
-  ├── index.php
+public/                # → The document root
+  ├── index.php        #
   ├── wp-config.php    # → WordPress configuration. Do not need to edit unless it's production.
   ├── wp-content/
   │    ├── plugins/    # → Plugins directory. Place your plugins here.
@@ -50,9 +51,9 @@ public/                   # → The document root
 ```
 
 ## Migrating an existing project
-Despite the change in folder structure, migrating an existing project is 
-relatively straightforward. You just need to shift the folders around for
-a little bit.
+Despite the change in folder structure, migrating an existing project is
+relatively straightforward. You just need to shift the folders around a little
+bit.
 
 1. Clone this repository
 2. Copy your existing site as-is into `wp-core`
