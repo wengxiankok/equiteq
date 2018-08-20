@@ -11,8 +11,8 @@
   "extra": {
     "wordpress-install-dir": "public/wp-core",
     "installer-paths": {
-      "www/wp-content/plugins/{$name}": ["type:wordpress-plugin"],
-      "www/wp-content/mu-plugins/{$name}": ["type:wordpress-muplugin"]
+      "public/wp-content/plugins/{$name}": ["type:wordpress-plugin"],
+      "public/wp-content/mu-plugins/{$name}": ["type:wordpress-muplugin"]
     }
   }
 }
