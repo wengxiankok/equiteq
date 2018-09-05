@@ -1,16 +1,49 @@
 ![Why Hello There!](logo.png)  
-The Modern Front-End Dev Boilerplate.
+The Modern Front-End Developers Boilerplate.
 
 ## What is Boilr
-'Boilr' is a front-end boilerplate built to make starting a new project a painless experience.
+`Boilr` is a front-end boilerplate built with [Gulp](https://gulpjs.com/) to make starting your next website an absolute breeze.
+
+No configuration is requried to get started but if needed, `Boilr` is easily customisable and extendable to get it working the way you need.
+<br>
+<br>
 
 ## Features
-- **SASS** - Make writing CSS fun again.
-- **Webpack** - Bundle up your JavaScript.
-- **Babel + ES6** - Take advantage of the latest JavaScript features.
-- **Image Optimizer** - Optimize images for improved site load times.
-- **Local Server with BrowserSync** - Develop locally with support for live reloading, style injection and proxy servers support.
-- **Quick FTP Deployment** - Quickly and easily upload files to a specified FTP server.
+- **Gulp** - Powerful toolkit for automating painful or time-consuming tasks.
+- **SASS** - Featureful and powerful extension to CSS.
+- **Webpack + Babel** - The latest JavaScript features available and bundled.
+- **Image Optimisation** - Optimize images for improved site load times.
+- **Local Server with BrowserSync** - Develop locally with support for live reloading, style injection and proxy servers support.  
+<br>
+
+## Getting Started
+Before starting, ensure `gulp-cli` is installed globally.
+```bash
+$ yarn global add gulp-cli
+```
+<br>
+You can confirm this by running:
+```bash
+gulp -v
+
+# This should output:
+# CLI version 2.0.1
+# Local version 4.0.0
+```
+<br>
+With that you can now proceed to clone this repository and get to working.
+```bash
+# Clone this repository
+$ git clone https://git.forefront.com.my/lib/Boilr.git
+
+# Recreate the repository
+$ rm .git
+$ git init
+
+# Install Modules
+$ yarn
+```
+<br>
 
 ## How To Use
 To use Boilr, there are only 2 main commands you need to know.
@@ -22,7 +55,7 @@ and
 ```bash
 $ gulp dev          # Starts local development server
 ```
-&nbsp;
+<br>
 ##### Building for production
 To build for production, just add the `-p` flag to the end.
 ```bash
@@ -31,8 +64,9 @@ $ gulp dev -p       # Starts local development server with production assets
 ```bash
 $ gulp build -p     # Builds production ready assets
 ```  
-&nbsp;
-##### Working with a dev server / proxy
+<br>
+For a full list of commands available, please refer the [Tasks Available](#tasks-available) section
+## Working with a dev server / proxy
 In the case when you need to work off a development server, change the proxy value to you development server address.
 ```js
 export const configs = {
@@ -45,7 +79,7 @@ export const configs = {
   // ......
 };
 ```
-
+<br>
 ## Folder Structure
 Boilr comes with a default folder structure that is easy to adopt, and fits with most development work.
 ```bash
@@ -65,8 +99,11 @@ Boilr
 ├─ .babelrc
 ├─ .eslint.json
 ├─ .gitignore
-├─ package.json
 ├─ gulpfile.babel.js
+├─ logo.png
+├─ package.json
+├─ README.md
+├─ tsconfig.json
 ├─ webpack.config.js
 ```
 
@@ -81,7 +118,7 @@ Boilr
 └─ ...
 ```
 
-## Gulp Tasks
+## Tasks Available
 This is a list of all gulp tasks available for use.  
 
 Usable by typing as such.
@@ -92,13 +129,13 @@ $ gulp <task name>
 #### Main Tasks
 ##### `dev`
 Starts a development local server with auto-reloading and CSS injection.
+##### `watcher`
+Starts only the file watcher to work without a server.
 ##### `build`
 Builds all assets.
 
-&nbsp;
+<br>
 #### Single Tasks
-##### `watcher`
-Starts only the file watcher to work without a server.
 ##### `deploy`
 Uploads files to specified FTP server.
 ##### `pages`
@@ -114,7 +151,7 @@ Generates SVG sprite sheets.
 ##### `copy`
 Copies files from `static` to `dist`.
 
-&nbsp;
+<br>
 #### Cleaner Tasks
 ##### `clean:all`
 Deletes all files in `dist`.
