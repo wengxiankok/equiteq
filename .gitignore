@@ -1,3 +1,7 @@
+# Lockfiles
+yarn.lock
+package-lock.json
+
 # Output Directories
 dist
 build
