@@ -31,7 +31,7 @@ gulp.task('images', gulp.series('clean:images', images, svg));
 gulp.task('pages', gulp.series('clean:pages', pages));
 
 gulp.task('build', gulp.series('clean:all', gulp.parallel(pages, styles, images, copy, svg, scripts)));
-gulp.task('watcher', gulp.series('build', gulp.parallel(watcher, scripts)));
+gulp.task('watcher', gulp.series('build', gulp.parallel(watcher)));
 
 /* ---- Main Tasks ---------------- */
-gulp.task('dev', gulp.series('build', gulp.parallel(watcher, scripts, server)));
+gulp.task('dev', gulp.series('build', gulp.parallel(watcher, server)));
