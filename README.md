@@ -37,7 +37,7 @@ With that you can now proceed to clone this repository and get to working.
 $ git clone https://git.forefront.com.my/lib/Boilr.git
 
 # Recreate the repository
-$ rm .git
+$ rm -rf .git
 $ git init
 
 # Install Modules
