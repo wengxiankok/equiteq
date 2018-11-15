@@ -11,7 +11,7 @@ const source = `${baseDir.static}/**/*.*`;
 const dest   = baseDir.dist;
 
 export default function copy(){
-  return gulp.src(source)
+  return gulp.src(source, { dot: true })
     .pipe(newer(dest))
     .pipe(size())
     .pipe(gulp.dest(dest));
