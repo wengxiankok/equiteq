@@ -1,21 +1,20 @@
 # firestarter-init.sh
 # ~~~~~~~~~~~~~~~~~~~
-# Convenience script to call the `init-wordpress-site.sh` script in the
-# Vagrant server
+# Convenience script to perform the following actions:
+#   1. ssh into the server
+#   2. cd into the current folder (from the vm side)
+#   2. download WordPress core using `$ wp core download`
 
-# Get current site name
-site=${PWD##*/}
+# Specify which WordPress version to download
+version="4.9.8"
 
-# Call composer install if wp-core hasn't been downloaded
-if [ ! -e public/wp-core ]; then
-  if ! type "composer" > /dev/null 2>&1 ; then
-    printf "\033[93m\033[1m%s:\033[39m\033[0m Running composer through Vagrant. Please install 'composer' in the future.\n" "Warning" $1
-    cmd="composer install --working-dir=\"\${FOREFRONT_SITES_DIR}/$site\""
-    vagrant ssh -- -t "source ~/.bash_profile && $cmd"
-  else
-    composer install
-  fi
-fi
+# Get current directory name
+dir_name=${PWD##*/}
+
+# Define commands to execute on the server
+source_cmd="source ~/.bash_profile"
+cd_cmd="cd \${FOREFRONT_SITES_DIR}/$dir_name"
+download_cmd="wp core download --skip-content --version=\"${version}\""
 
 # Call the init script
-vagrant ssh -- -t "source ~/.bash_profile && init-wordpress-site $site"
+vagrant ssh -- -t "$source_cmd && $cd_cmd && $download_cmd"
