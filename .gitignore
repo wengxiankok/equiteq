@@ -1,12 +1,13 @@
 vendor
 
 # WordPress files
+public/wp-config/*
 public/wp-core
-public/wp-config.php
 public/wp-content/themes/*
 public/wp-content/uploads/*
 
 # [Whitelist] WordPress files
+!public/wp-config/*.sample.php
 !public/wp-content/themes/index.php
 !public/wp-content/uploads/index.php
 !public/wp-content/themes/firestarter-default
