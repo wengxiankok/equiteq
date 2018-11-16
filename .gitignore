@@ -1,16 +1,27 @@
-vendor
+# Composer files
+/vendor
+
+# WordPress folders
+/public/wp-admin/*
+/public/wp-includes/*
+/public/wp-config/*
+/public/wp-content/themes/*
+/public/wp-content/uploads/*
 
 # WordPress files
-public/wp-config/*
-public/wp-core
-public/wp-content/themes/*
-public/wp-content/uploads/*
+/public/wp-*.php
+/public/index.php
+/public/license.txt
+/public/readme.html
+/public/xmlrpc.php
 
 # [Whitelist] WordPress files
-!public/wp-config/*.sample.php
-!public/wp-content/themes/index.php
-!public/wp-content/uploads/index.php
-!public/wp-content/themes/firestarter-default
+!/public/wp-config.php
+!/public/wp-config/*.sample.php
+!/public/wp-content/index.php
+!/public/wp-content/themes/index.php
+!/public/wp-content/uploads/index.php
+!/public/wp-content/themes/firestarter-default
 
 # OS generated files
 .DS_Store
