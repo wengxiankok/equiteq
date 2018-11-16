@@ -3,8 +3,8 @@
  * The base configuration for WordPress.
  *
  * WARNING: This is a non-standard wp-config.php file. It is DIFFERENT from the
- * default file provided by the standard WordPress installation. Replace this
- * file with the standard wp-config.php to revert to the standard behaviour.
+ * standard file provided by a typical WordPress installation. Replace this
+ * file with the standard wp-config.php to revert back to standard behaviour.
  *
  * It has been modified to load configuration values in the `wp-config/`
  * directory in the following order (from highest to lowest priority):
