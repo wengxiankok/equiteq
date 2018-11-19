@@ -7,9 +7,9 @@ development server, Firestarter allows you to quickly set up new WordPress
 based projects with minimal effort and zero configuration.
 
 ## Features
-* Folder structure optimised for developers and Git
-* Zero configuration
-* Interactive installation script
+* [Boilr](https://git.forefront.com.my/lib/Boilr) — ES6, SASS, BrowserSync, image minification and many more
+* Folder structure optimised for developers, Git and build tools
+* Defaults to shared database server <sup>[1](#footnote-1)</sup>
 
 ## Requirements
 Make sure you have the following dependencies before continuing:
@@ -25,41 +25,28 @@ $ git clone https://git.forefront.com.my/websites/firestarter.git <project_name>
 # 2. Enter the directory
 $ cd <project_name>
 
-# 3. Call the init script and run through the interactive installation
+# 3. Call the init script to download WordPress files
 $ ./firestarter-init.sh
 
-# 4. Remove the `firestarter` git repository
-$ rm -rf .git
+# 4. Modify database settings in wp-config/development.php if it hasn't already been configured
 ```
 
-## Folder structure
-The WordPress folder structure has been reorganised for better developer
-experience and better integration with version control systems.
+### Switching between `wp-config` files
+Firestarter has been modified to lookup for multiple `wp-config` files. It loads
+the first available config file in the `public/wp-config` directory in this order:
+1. `wp-config/production.php` (create this file for production servers)
+2. `wp-config/local.php` (create this file for your local modifications)
+3. `wp-config/development.php` (default)
 
-The biggest change is the movement of `wp-content` into an upper directory, and
-moving the WordPress core files into its own subdirectory, `wp-core`.
+So to override the shared `development.php` configuration, simply create a new
+file according to the hierarchy above. Unlike `development.php`, the other two
+files will be ignored by Git, so your changes will only affect you.
 
-```bash
-public/                # → The document root
-  ├── index.php        #
-  ├── wp-config.php    # → WordPress configuration. Do not need to edit unless it's production.
-  ├── wp-content/
-  │    ├── plugins/    # → Plugins directory. Place your plugins here.
-  │    ├── themes/     # → Themes directory. Place your theme folders here.
-  │    └── uploads/    # → Uploads directory. Do not commit.
-  └── wp-core/         # → WordPress core files. Do not edit.
-```
+### Switching to a local database
+By default, Firestarter uses a shared database server for development. If you
+would like to use an isolated local database server running on Forefather, simply
+copy `wp-config/local.sample.php` to `wp-config/local.php` and modify the
+settings accordingly.
 
-## Migrating an existing project
-Despite the change in folder structure, migrating an existing project is
-relatively straightforward. You just need to shift the folders around a little
-bit.
-
-1. Clone this repository
-2. Copy your existing site as-is into `wp-core`
-3. Move your existing `wp-content` folder into one directory up
-4. Delete any existing `wp-config.php` file in `wp-core`
-5. Run the `./firestarter-init.sh` installation script
-6. Migrate the existing database into your local Forefather server. You have the following options:
-    * Use any one of the many WordPress migration plugins
-    * Manually export the existing database, and import using [adminer](http://adminer.local.ffshost.com).
+---
+<sup id="footnote-1">[1] Only works while in office</sup>
