@@ -12,9 +12,9 @@ version="4.9.8"
 dir_name=${PWD##*/}
 
 # Define commands to execute on the server
-source_cmd="source ~/.bash_profile"
+source_cmd="source ~/.bash_profile" # This loads the required environment variables
 cd_cmd="cd \${FOREFRONT_SITES_DIR}/$dir_name"
 download_cmd="wp core download --skip-content --version=\"${version}\""
 
-# Call the init script
+# Run the commands on the server
 vagrant ssh -- -t "$source_cmd && $cd_cmd && $download_cmd"
