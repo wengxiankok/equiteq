@@ -18,6 +18,7 @@
 # [Whitelist] WordPress files
 !/public/wp-config.php
 !/public/wp-config/*.sample.php
+!/public/wp-config/development.php
 !/public/wp-content/index.php
 !/public/wp-content/themes/index.php
 !/public/wp-content/uploads/index.php
