@@ -9,6 +9,7 @@ based projects with minimal effort and zero configuration.
 ## Features
 * [Boilr](https://git.forefront.com.my/lib/Boilr) — ES6, SASS, BrowserSync, image minification and many more
 * Folder structure optimised for developers, Git and build tools
+* Flexible wp-config configuration
 * Defaults to shared database server <sup>[1](#footnote-1)</sup>
 
 ## Requirements
@@ -25,10 +26,16 @@ $ git clone https://git.forefront.com.my/websites/firestarter.git <project_name>
 # 2. Enter the directory
 $ cd <project_name>
 
+# 3. (Optional) If you want to use Boilr, switch to the `boilr` branch
+$ git checkout boilr
+
 # 3. Call the init script to download WordPress files
 $ ./firestarter-init.sh
 
-# 4. Modify database settings in wp-config/development.php if it hasn't already been configured
+# 4. (If not already configured) Modify database settings in wp-config/development.php
+
+# 5. Stop tracking the `firestarter` GitLab repository
+$ rm -rf .git
 ```
 
 ### Switching between `wp-config` files
@@ -38,7 +45,7 @@ the first available config file in the `public/wp-config` directory in this orde
 2. `wp-config/local.php` (create this file for your local modifications)
 3. `wp-config/development.php` (default)
 
-So to override the shared `development.php` configuration, simply create a new
+So to override the default `development.php` configuration, simply create a new
 file according to the hierarchy above. Unlike `development.php`, the other two
 files will be ignored by Git, so your changes will only affect you.
 
