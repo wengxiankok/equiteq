@@ -41,14 +41,14 @@ define('DB_COLLATE', '');
  * https://api.wordpress.org/secret-key/1.1/salt/
  * @var string
  */
-define('AUTH_KEY',         '[F$]lVy`Sp8MfKOK56HS5pa-f4q>hzLx`).E~lXR&Dd,pr{T9ibwo6E{:!.Q+v_!');
-define('SECURE_AUTH_KEY',  'l_|w!O8jI+|?Hzac3c$IK|2m5)5k&Ch+3b1a{hNeru:`Pog;N-J%k=u`E:|i]P*l');
-define('LOGGED_IN_KEY',    '(7SNpxq-$^X`||@o#F @*._<w08HLgF{JP{tNI4:m1zl 4ygz*ErRx<<}9mJN3D(');
-define('NONCE_KEY',        'kTPPeCF9UO_)$VRc>4XLpwJ-P;Q7ZvRF@qh)LS;B|aS;h{j|<zBC+anZ2a^e]Ue,');
-define('AUTH_SALT',        '[pqF2?1jj&+w|II`o_WmdDL%7+<xd(fl ;m}WVfK3i0blPfg>nxPx5_v,g]$9e$a');
-define('SECURE_AUTH_SALT', 'wZ`[:@F@, {t_Tb/NQ,iki.w##j`Asu%bYa)^4P?>Ixmip|5bgM-:?9K;`I+aPDW');
-define('LOGGED_IN_SALT',   'w-.X;J xlh0P(n-bUB$]P,~HX]u:D F*v?l#^N s*v<*Y[r7^Zl)@%/-a@df]]N*');
-define('NONCE_SALT',       'FBi|qjt-EJ|R&H^h+@+96hT^BIZsd-Pl6XgO!ZXP>_2FNY+3FJ8{I+&fAfwN_[vU');
+define( 'AUTH_KEY',         'insert your unique phrase here!' );
+define( 'SECURE_AUTH_KEY',  'insert your unique phrase here!' );
+define( 'LOGGED_IN_KEY',    'insert your unique phrase here!' );
+define( 'NONCE_KEY',        'insert your unique phrase here!' );
+define( 'AUTH_SALT',        'insert your unique phrase here!' );
+define( 'SECURE_AUTH_SALT', 'insert your unique phrase here!' );
+define( 'LOGGED_IN_SALT',   'insert your unique phrase here!' );
+define( 'NONCE_SALT',       'insert your unique phrase here!' );
 
 /**
  * Change this to true to enable the display of notices during development.
