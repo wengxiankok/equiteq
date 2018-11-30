@@ -57,7 +57,7 @@ define('NONCE_SALT',       'dont_change_this_salt_because_all_devs_need_to_be_eq
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /**
  * The WordPress database table prefix.
