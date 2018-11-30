@@ -2,7 +2,7 @@
 Firestarter is a WordPress stack and folder structure that is optimised for
 build tools and best practices.
 
-Together with the [Forefather](https://git.forefront.com.my/websites/forefather)
+Together with the [Forefather](https://git.forefront.com.my/lib/forefather)
 development server, Firestarter allows you to quickly set up new WordPress
 based projects with minimal effort and zero configuration.
 
@@ -14,14 +14,14 @@ based projects with minimal effort and zero configuration.
 
 ## Requirements
 Make sure you have the following dependencies before continuing:
-* [Forefather Vagrant Server](https://git.forefront.com.my/websites/forefather)
+* [Forefather Vagrant Server](https://git.forefront.com.my/lib/forefather)
 * [Composer](https://getcomposer.org/)
 * Access to a bash-based terminal (macOS Terminal, Windows Git Bash, Windows Subsystem for Linux)
 
 ## Usage
 ```bash
 # 1. Download this repository or clone it into the forefather `sites/` directory
-$ git clone https://git.forefront.com.my/websites/firestarter.git <project_name>
+$ git clone https://git.forefront.com.my/lib/firestarter.git <project_name>
 
 # 2. Enter the directory
 $ cd <project_name>
