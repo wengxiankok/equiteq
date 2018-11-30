@@ -4,7 +4,7 @@ build tools and best practices.
 
 Together with the [Forefather](https://git.forefront.com.my/lib/forefather)
 development server, Firestarter allows you to quickly set up new WordPress
-based projects with minimal effort and zero configuration.
+based projects.
 
 ## Features
 * [Boilr](https://git.forefront.com.my/lib/Boilr) — ES6, SASS, BrowserSync, image minification and many more
@@ -19,8 +19,27 @@ Make sure you have the following dependencies before continuing:
 * Access to a bash-based terminal (macOS Terminal, Windows Git Bash, Windows Subsystem for Linux)
 
 ## Usage
+If you're setting up a new project, see [setting up new projects](#setting-up-new-projects) instead.
+
 ```bash
 # 1. Download this repository or clone it into the forefather `sites/` directory
+$ git clone <repository_url> <project_name>
+
+# 2. Enter the directory
+$ cd <project_name>
+
+# 3. Call the init script to download WordPress files
+$ ./firestarter-init.sh
+
+# 4. Your done! If this project uses Boilr, proceed to installing npm dependencies.
+```
+
+### Setting up new projects
+These steps are for new projects only. Ignore this if you cloning from an
+existing repository.
+
+```bash
+# 1. Download the firestarter repository or clone it into the forefather `sites/` directory
 $ git clone https://git.forefront.com.my/lib/firestarter.git <project_name>
 
 # 2. Enter the directory
@@ -29,14 +48,17 @@ $ cd <project_name>
 # 3. (Optional) If you want to use Boilr, switch to the `boilr` branch
 $ git checkout boilr
 
-# 3. Call the init script to download WordPress files
+# 4. Stop tracking the `firestarter` GitLab repository
+$ rm -rf .git
+
+# 5. Call the init script to download WordPress files
 $ ./firestarter-init.sh
 
-# 4. (If not already configured) Modify database settings in wp-config/development.php
+# 6. Configure database settings in wp-config/development.php
 
-# 5. Stop tracking the `firestarter` GitLab repository
-$ rm -rf .git
+# 7. Your done! You may now proceed to pushing this to a new Git repository.
 ```
+
 
 ### Switching between `wp-config` files
 Firestarter has been modified to lookup for multiple `wp-config` files. It loads

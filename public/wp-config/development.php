@@ -10,7 +10,7 @@ define('DB_NAME', 'insert_db_name_here');
  * The MySQL database username.
  * @var string
  */
-define('DB_USER', 'forefront');
+define('DB_USER', 'ux');
 
 /**
  * The MySQL database password.
