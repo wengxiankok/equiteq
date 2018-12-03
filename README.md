@@ -43,7 +43,7 @@ These steps are for new projects only. Ignore this if you are cloning from an
 existing repository.
 
 > ```bash
-> # 1. Download or clone the firestarter repository into the forefather > `sites/` directory
+> # 1. Download or clone the firestarter repository
 > $ git clone https://git.forefront.com.my/lib/firestarter.git <project_name>
 > 
 > # 2. Enter the directory
@@ -66,7 +66,8 @@ existing repository.
 ### Migrating existing projects
 If you want to migrate an existing project into Firestarter, follow these steps:
 
-> 1. In your *existing* project directory, create a new folder called `public/` and move all your WordPress files into the subdirectory.
+> 1. In your *existing* project directory, create a new folder called `public/`
+     and move all your WordPress files into the subdirectory.
 > 2. Copy and replace the following files *from the firestarter repository* into your project directory.
 >     * `public/wp-config.php`
 >     * `public/wp-config/*.php`
