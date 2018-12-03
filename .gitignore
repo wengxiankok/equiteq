@@ -22,7 +22,6 @@
 !/public/wp-content/index.php
 !/public/wp-content/themes/index.php
 !/public/wp-content/uploads/index.php
-!/public/wp-content/themes/firestarter-default
 
 # OS generated files
 .DS_Store
