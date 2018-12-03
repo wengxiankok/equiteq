@@ -1,5 +1,5 @@
-# Composer files
-/vendor
+### FIRESTARTER START
+# Copy these ignore statements to migrate to an existing project.
 
 # WordPress folders
 /public/wp-admin/*
@@ -22,6 +22,8 @@
 !/public/wp-content/index.php
 !/public/wp-content/themes/index.php
 !/public/wp-content/uploads/index.php
+
+### FIRESTARTER END
 
 # OS generated files
 .DS_Store
