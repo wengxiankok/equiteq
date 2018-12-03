@@ -35,7 +35,7 @@ migrate an existing project, see
 > # 3. Call the init script to download WordPress files
 > $ ./firestarter-init.sh
 > 
-> # 4. Your done! If this project uses Boilr, proceed to installing npm > dependencies.
+> # 4. Your done! If this project uses Boilr, proceed to installing npm dependencies.
 > ```
 
 ### Setting up new projects
