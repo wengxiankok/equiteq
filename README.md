@@ -19,9 +19,11 @@ Make sure you have the following dependencies before continuing:
 * Access to a bash-based terminal (macOS Terminal, Windows Git Bash, Windows Subsystem for Linux)
 
 ## Usage
-If you're setting up a new project, see [setting up new projects](#setting-up-new-projects)
-instead. If you want to migrate an existing project, see [migrating existing projects](#migrating-existing-projects).
-Otherwise, the following steps are for projects that has already been setup by another developer:
+The following steps are for projects that has already been setup by another
+developer. If you're setting up a new project, see
+[setting up new projects](#setting-up-new-projects) instead. If you want to
+migrate an existing project, see
+[migrating existing projects](#migrating-existing-projects).
 
 > ```bash
 > # 1. Download or clone this repository into the forefather `sites/` directory
@@ -64,8 +66,8 @@ existing repository.
 ### Migrating existing projects
 If you want to migrate an existing project into Firestarter, follow these steps:
 
-> 1. In your *existing* project directory, create a new folder called `public/` > and move all your WordPress files into the subdirectory.
-> 2. Copy and replace the following files *from the firestarter repository* > into your project directory.
+> 1. In your *existing* project directory, create a new folder called `public/` and move all your WordPress files into the subdirectory.
+> 2. Copy and replace the following files *from the firestarter repository* into your project directory.
 >     * `public/wp-config.php`
 >     * `public/wp-config/*.php`
 >     * `.gitattributes`
