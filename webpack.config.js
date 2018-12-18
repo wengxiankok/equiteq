@@ -13,7 +13,7 @@ const production = env === 'production' ? true : false;
 module.exports = {
   mode: env,
   entry: {
-    app: path.posix.join(__dirname, './src/js/app.js'),
+    app: path.posix.join(__dirname, './source/js/app.js'),
     // vendor: [],
   },
   output: {
@@ -24,7 +24,7 @@ module.exports = {
   resolve: {
     // /** Alias paths for cleaner imports */
     // alias: {
-    //   'lib': path.resolve(__dirname, 'src/js/lib')
+    //   'lib': path.resolve(__dirname, 'source/js/lib')
     // },
     /** Automatically look for these extensions in import statements. */
     extensions: ['.js', '.jsx'],
