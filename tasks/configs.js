@@ -35,7 +35,7 @@ export const baseDir = {
 export const configs = {
   styles: {
     sass: {
-
+      includePaths: ['node_modules/']
     },
     cssnano: {
       preset: 'default'
