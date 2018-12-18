@@ -7,7 +7,7 @@ export const baseDir = {
   dist: './dist',
 
   styles: {
-    src: ['sass/**/*.scss', 'css/**/*.css'],
+    src: ['scss/**/*.scss', 'css/**/*.css'],
     dest: 'css/',
   },
 
