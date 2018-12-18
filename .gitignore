@@ -6,6 +6,9 @@ package-lock.json
 dist
 build
 
+# Server config
+server.json
+
 # Caches
 .sass-cache
 
