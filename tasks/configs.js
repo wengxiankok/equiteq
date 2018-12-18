@@ -1,3 +1,5 @@
+import serverConfig from './server.json';
+
 export const env = process.argv.indexOf('-p') !== -1 ? 'production' : 'development';
 export const production = env === 'production' ? true : false;
 
@@ -55,11 +57,7 @@ export const configs = {
     }
   },
 
-  browsersync: {
-    proxy: false,
-    watch: '**/*.*',
-    options: {}
-  },
+  browsersync: serverConfig,
 
   ftp: {
     host: '',
