@@ -16,6 +16,7 @@ No configuration is required to get started, but if needed `Boilr` is easily cus
 <br>
 
 ## Prerequisites
+##### Install gulp-cli
 Before starting, ensure `gulp-cli` is installed globally.
 ```bash
 # With npm
@@ -49,7 +50,21 @@ $ npm install
 # with yarn
 $ yarn
 ```
+
 ## How To Use
+##### Create server config file
+Before starting, create a `server.json` config file in the tasks folder.
+
+A sample file called `server.json.sample` is provided which you can duplicate and rename.
+
+```bash
+Boilr
+├─ tasks/
+│  ├─ server.json
+│  └─ ...
+└─ ...
+```
+<br>
 ##### Development Builds
 To use Boilr, there are only 2 main commands you need to know.
 ```bash
@@ -70,15 +85,11 @@ $ gulp build -p     # Builds production ready assets
 <br>
 For a full list of commands available, please refer the [Tasks Available](#tasks-available) section
 ## Working with a dev server / proxy
-In the case when you need to work off a development server, change the proxy value to your development server address.
+If you need to work with a development server or a proxy, you can easily do so by opening your `server.json` file and changing the value of the proxy field to your desired URL.
+
 ```js
-export const configs = {
-  // ......
-  browsersync: {
-    // proxy: false,
-    proxy: 'mydevserver.local',
-    // ......
-  },
+{
+  "proxy": "mydevserver.local",  
   // ......
 };
 ```
