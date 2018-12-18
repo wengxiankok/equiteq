@@ -4,8 +4,7 @@ The Modern Front-End Developers Boilerplate.
 ## What is Boilr
 `Boilr` is a front-end boilerplate built with [Gulp](https://gulpjs.com/) to make starting your next website an absolute breeze.
 
-No configuration is requried to get started but if needed, `Boilr` is easily customisable and extendable to get it working the way you need.
-<br>
+No configuration is required to get started, but if needed `Boilr` is easily customisable and extendable to get it working the way you need.
 <br>
 
 ## Features
@@ -16,9 +15,13 @@ No configuration is requried to get started but if needed, `Boilr` is easily cus
 - **Local Server with BrowserSync** - Develop locally with support for live reloading, style injection and proxy servers support.  
 <br>
 
-## Getting Started
+## Prerequisites
 Before starting, ensure `gulp-cli` is installed globally.
 ```bash
+# With npm
+$ npm install gulp-cli -g
+
+# With Yarn
 $ yarn global add gulp-cli
 ```
 <br>
@@ -41,22 +44,22 @@ $ rm -rf .git
 $ git init
 
 # Install Modules
+# with npm
+$ npm install
+# with yarn
 $ yarn
 ```
-<br>
-
 ## How To Use
+##### Development Builds
 To use Boilr, there are only 2 main commands you need to know.
-
 ```bash
 $ gulp build        # Builds all assets
 ```
-and
 ```bash
 $ gulp dev          # Starts local development server
 ```
 <br>
-##### Building for production
+##### Production Builds
 To build for production, just add the `-p` flag to the end.
 ```bash
 $ gulp dev -p       # Starts local development server with production assets
@@ -67,7 +70,7 @@ $ gulp build -p     # Builds production ready assets
 <br>
 For a full list of commands available, please refer the [Tasks Available](#tasks-available) section
 ## Working with a dev server / proxy
-In the case when you need to work off a development server, change the proxy value to you development server address.
+In the case when you need to work off a development server, change the proxy value to your development server address.
 ```js
 export const configs = {
   // ......
@@ -85,17 +88,22 @@ Boilr comes with a default folder structure that is easy to adopt, and fits with
 ```bash
 Boilr
 │  # Main folder for source files
-├─ src/
-│  ├─ sass           # scss
+├─ source/
+│  ├─ scss           # scss
 │  ├─ img            # images
 │  ├─ js             # javascript
 │  └─ index.html
 │  
 ├─ static/           # Folder for static assets that do not need processing
+│  └─ ...
 ├─ dist/             # Final output folder
+│  └─ ...
+│  
+│  # Tasks
+├─ tasks/
+│  └─ ...
 │  
 │  # Configuration Files
-├─ tasks/
 ├─ .babelrc
 ├─ .eslint.json
 ├─ .gitignore
@@ -108,22 +116,24 @@ Boilr
 ```
 
 ## Configuration
-If ever you would like to customize Boilr to suit your preferences, you can easily do so by editing the `config.js` file located within the `tasks` folder.
+If ever you want to customize Boilr, you can easily do so by editing the `configs.js` file located within the `tasks` folder.
 
 ```bash
 Boilr
 ├─ tasks/
-│  ├─ config.js
+│  ├─ configs.js
 │  └─ ...
 └─ ...
 ```
 
 ## Tasks Available
-This is a list of all gulp tasks available for use.  
-
-Usable by typing as such.
+This is a list of all gulp tasks available which are usable as such.
 ```bash
+# Development builds
 $ gulp <task name>
+
+# Production builds
+$ gulp <task name> -p
 ```
 
 #### Main Tasks
