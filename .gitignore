@@ -28,6 +28,13 @@
 yarn.lock
 package-lock.json
 
+# Output Directories
+dist
+build
+
+# Server config
+server.json
+
 # Caches
 .sass-cache
 

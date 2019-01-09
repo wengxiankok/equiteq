@@ -1,16 +1,16 @@
-import gulp    from 'gulp';
+import gulp from 'gulp';
 
 import './tasks/hello';
-import styles  from './tasks/styles';
-import images  from './tasks/images';
+import styles from './tasks/styles';
+import images from './tasks/images';
 import scripts from './tasks/scripts';
-import pages   from './tasks/pages';
-import server  from './tasks/server';
-import copy    from './tasks/copy';
-import clean   from './tasks/clean';
-import deploy  from './tasks/deploy';
+import pages from './tasks/pages';
+import server from './tasks/server';
+import copy from './tasks/copy';
+import clean from './tasks/clean';
+import deploy from './tasks/deploy';
 import watcher from './tasks/watcher';
-import svg     from './tasks/svg';
+import svg from './tasks/svg';
 
 /* ---- Private Tasks ------------- */
 gulp.task('clean:all', clean.all);

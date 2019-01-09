@@ -1,13 +1,15 @@
+import serverConfig from './server.json';
+
 export const env = process.argv.indexOf('-p') !== -1 ? 'production' : 'development';
-export const production = env === 'production' ? true : false;
+export const production = env === 'production';
 
 export const baseDir = {
   static: './static',
-  src: './src',
+  src: './source',
   dist: './public/wp-content/themes/theme2018',
 
   styles: {
-    src: ['sass/**/*.scss', 'css/**/*.css'],
+    src: ['scss/**/*.scss', 'css/**/*.css'],
     dest: 'css/',
   },
 
@@ -18,31 +20,31 @@ export const baseDir = {
 
   images: {
     src: 'img/**/*',
-    dest: 'img/'
+    dest: 'img/',
   },
 
   pages: {
     src: ['**/*.html', '**/*.php'],
-    dest: '/'
+    dest: '/',
   },
 
   svg: {
     src: 'svg/**/*.svg',
-    dest: 'svg/'
-  }
+    dest: 'svg/',
+  },
 };
 
 export const configs = {
   styles: {
     sass: {
-
+      includePaths: ['node_modules/'],
     },
     cssnano: {
-      preset: 'default'
+      preset: 'default',
     },
     autoprefixer: {
-      browsers: ['last 2 versions']
-    }
+      browsers: ['last 2 versions'],
+    },
   },
 
   images: {
@@ -51,15 +53,11 @@ export const configs = {
     },
     quality: {
       jpeg: 70,
-      png : 70
-    }
+      png: 70,
+    },
   },
 
-  browsersync: {
-    proxy: false,
-    watch: '**/*.*',
-    options: {}
-  },
+  browsersync: serverConfig,
 
   ftp: {
     host: '',
@@ -67,7 +65,7 @@ export const configs = {
     port: '',
     password: '',
     directory: '',
-    secure: true
+    secure: true,
   },
 
   svg: {

@@ -1,9 +1,9 @@
 /* ---- Import NPM Modules --------- */
-const pkg = require('./../package.json');
+import pkg from '../package.json';
 
 /* ---- Import Configs ------------- */
-import {env} from './configs';
-import {log} from './utils';
+import { env } from './configs';
+import { log } from './utils';
 
 const title = String.raw`
   ____        _ _
@@ -15,10 +15,12 @@ const title = String.raw`
 
 `;
 
-const msg = log.string(`
+const msg = log.string(
+  `
   ${title}
   Environment: '${log.string(env.toUpperCase(), 'yellow')}'
-  `, 'green'
+  `,
+  'green',
 );
 
 console.log(msg);
