@@ -11,7 +11,8 @@ const source = path.join(baseDir.src, baseDir.svg.src);
 const dest = path.join(baseDir.dist, baseDir.svg.dest);
 
 export default function svg() {
-  return gulp.src(source)
+  return gulp
+    .src(source)
     .pipe(rename({ prefix: configs.svg.prefix }))
     .pipe(svgstore())
     .pipe(rename('sprites.svg'))
