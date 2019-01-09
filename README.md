@@ -1,186 +1,81 @@
-![Why Hello There!](logo.png)  
-The Modern Front-End Developers Boilerplate.
+# Firestarter
+Firestarter is a WordPress stack and folder structure that is optimised for
+build tools and best practices.
 
-## What is Boilr
-`Boilr` is a front-end boilerplate built with [Gulp](https://gulpjs.com/) to make starting your next website an absolute breeze.
-
-No configuration is required to get started, but if needed `Boilr` is easily customisable and extendable to get it working the way you need.
-<br>
+Together with the [Forefather](https://git.forefront.com.my/lib/forefather)
+development server, Firestarter allows you to quickly set up new WordPress
+based projects.
 
 ## Features
-- **Gulp** - Powerful toolkit for automating painful or time-consuming tasks.
-- **SASS** - Featureful and powerful extension to CSS.
-- **Webpack + Babel** - The latest JavaScript features available and bundled.
-- **Image Optimisation** - Optimize images for improved site load times.
-- **Local Server with BrowserSync** - Develop locally with support for live reloading, style injection and proxy servers support.  
-<br>
+* [Boilr](https://git.forefront.com.my/lib/Boilr) — ES6, SASS, BrowserSync, image minification and many more
+* Folder structure optimised for developers, Git and build tools
+* Flexible wp-config configuration
+* Defaults to shared database server <sup>[1](#footnote-1)</sup>
 
-## Prerequisites
-##### Install gulp-cli
-Before starting, ensure `gulp-cli` is installed globally.
+## Requirements
+Make sure you have the following dependencies before continuing:
+* [Forefather Vagrant Server](https://git.forefront.com.my/lib/forefather)
+* [Composer](https://getcomposer.org/)
+* Access to a bash-based terminal (macOS Terminal, Windows Git Bash, Windows Subsystem for Linux)
+
+## Usage
+If you're setting up a new project, see [setting up new projects](#setting-up-new-projects) instead.
+
 ```bash
-# With npm
-$ npm install gulp-cli -g
+# 1. Download this repository or clone it into the forefather `sites/` directory
+$ git clone <repository_url> <project_name>
 
-# With Yarn
-$ yarn global add gulp-cli
+# 2. Enter the directory
+$ cd <project_name>
+
+# 3. Call the init script to download WordPress files
+$ ./firestarter-init.sh
+
+# 4. Your done! If this project uses Boilr, proceed to installing npm dependencies.
 ```
-<br>
-You can confirm this by running:
-```bash
-gulp -v
 
-# This should output:
-# CLI version 2.0.1
-# Local version 4.0.0
-```
-<br>
-With that you can now proceed to clone this repository and get to working.
-```bash
-# Clone this repository
-$ git clone https://git.forefront.com.my/lib/Boilr.git
+### Setting up new projects
+These steps are for new projects only. Ignore this if you cloning from an
+existing repository.
 
-# Recreate the repository
+```bash
+# 1. Download the firestarter repository or clone it into the forefather `sites/` directory
+$ git clone https://git.forefront.com.my/lib/firestarter.git <project_name>
+
+# 2. Enter the directory
+$ cd <project_name>
+
+# 3. (Optional) If you want to use Boilr, switch to the `boilr` branch
+$ git checkout boilr
+
+# 4. Stop tracking the `firestarter` GitLab repository
 $ rm -rf .git
-$ git init
 
-# Install Modules
-# with npm
-$ npm install
-# with yarn
-$ yarn
+# 5. Call the init script to download WordPress files
+$ ./firestarter-init.sh
+
+# 6. Configure database settings in wp-config/development.php
+
+# 7. Your done! You may now proceed to pushing this to a new Git repository.
 ```
 
-## How To Use
-##### Create server config file
-Before starting, create a `server.json` config file in the tasks folder.
 
-A sample file called `server.json.sample` is provided which you can duplicate and rename.
+### Switching between `wp-config` files
+Firestarter has been modified to lookup for multiple `wp-config` files. It loads
+the first available config file in the `public/wp-config` directory in this order:
+1. `wp-config/production.php` (create this file for production servers)
+2. `wp-config/local.php` (create this file for your local modifications)
+3. `wp-config/development.php` (default)
 
-```bash
-Boilr
-├─ tasks/
-│  ├─ server.json
-│  └─ ...
-└─ ...
-```
-<br>
-##### Development Builds
-To use Boilr, there are only 2 main commands you need to know.
-```bash
-$ gulp build        # Builds all assets
-```
-```bash
-$ gulp dev          # Starts local development server
-```
-<br>
-##### Production Builds
-To build for production, just add the `-p` flag to the end.
-```bash
-$ gulp dev -p       # Starts local development server with production assets
-```
-```bash
-$ gulp build -p     # Builds production ready assets
-```  
-<br>
-For a full list of commands available, please refer the [Tasks Available](#tasks-available) section
-## Working with a dev server / proxy
-If you need to work with a development server or a proxy, you can easily do so by opening your `server.json` file and changing the value of the proxy field to your desired URL.
+So to override the default `development.php` configuration, simply create a new
+file according to the hierarchy above. Unlike `development.php`, the other two
+files will be ignored by Git, so your changes will only affect you.
 
-```js
-{
-  "proxy": "mydevserver.local",  
-  // ......
-};
-```
-<br>
-## Folder Structure
-Boilr comes with a default folder structure that is easy to adopt, and fits with most development work.
-```bash
-Boilr
-│  # Main folder for source files
-├─ source/
-│  ├─ scss           # scss
-│  ├─ img            # images
-│  ├─ js             # javascript
-│  └─ index.html
-│  
-├─ static/           # Folder for static assets that do not need processing
-│  └─ ...
-├─ dist/             # Final output folder
-│  └─ ...
-│  
-│  # Tasks
-├─ tasks/
-│  └─ ...
-│  
-│  # Configuration Files
-├─ .babelrc
-├─ .eslint.json
-├─ .gitignore
-├─ gulpfile.babel.js
-├─ logo.png
-├─ package.json
-├─ README.md
-├─ tsconfig.json
-├─ webpack.config.js
-```
+### Switching to a local database
+By default, Firestarter uses a shared database server for development. If you
+would like to use an isolated local database server running on Forefather, simply
+copy `wp-config/local.sample.php` to `wp-config/local.php` and modify the
+settings accordingly.
 
-## Configuration
-If ever you want to customize Boilr, you can easily do so by editing the `configs.js` file located within the `tasks` folder.
-
-```bash
-Boilr
-├─ tasks/
-│  ├─ configs.js
-│  └─ ...
-└─ ...
-```
-
-## Tasks Available
-This is a list of all gulp tasks available which are usable as such.
-```bash
-# Development builds
-$ gulp <task name>
-
-# Production builds
-$ gulp <task name> -p
-```
-
-#### Main Tasks
-##### `dev`
-Starts a development local server with auto-reloading and CSS injection.
-##### `watcher`
-Starts only the file watcher to work without a server.
-##### `build`
-Builds all assets.
-
-<br>
-#### Single Tasks
-##### `deploy`
-Uploads files to specified FTP server.
-##### `pages`
-Builds HTML and PHP files.
-##### `styles`
-Builds stylesheets and applies Autoprefixer and CSSNano.
-##### `scripts`
-Bundles JavaScript with Webpack.
-#### `images`
-Optimizes images.
-##### `svg`
-Generates SVG sprite sheets.
-##### `copy`
-Copies files from `static` to `dist`.
-
-<br>
-#### Cleaner Tasks
-##### `clean:all`
-Deletes all files in `dist`.
-##### `clean:images`
-Deletes only images.
-##### `clean:css`
-Deletes only `styles` folder.
-##### `clean:pages`
-Deletes only pages.
-##### `clean:js`
-Deletes only `scripts` folder.
+---
+<sup id="footnote-1">[1] Only works while in office</sup>
