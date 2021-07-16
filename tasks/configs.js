@@ -1,7 +1,7 @@
-import serverConfig from './server.json';
+import serverConfig from './server.json'
 
-export const env = process.argv.indexOf('-p') !== -1 ? 'production' : 'development';
-export const production = env === 'production';
+export const env = process.argv.indexOf('-p') !== -1 ? 'production' : 'development'
+export const production = env === 'production'
 
 export const baseDir = {
   static: './static',
@@ -32,7 +32,7 @@ export const baseDir = {
     src: 'svg/**/*.svg',
     dest: 'svg/',
   },
-};
+}
 
 export const configs = {
   styles: {
@@ -42,9 +42,6 @@ export const configs = {
     cssnano: {
       preset: 'default',
     },
-    autoprefixer: {
-      browsers: ['last 2 versions'],
-    },
   },
 
   images: {
@@ -52,8 +49,8 @@ export const configs = {
       verbose: true,
     },
     quality: {
-      jpeg: 70,
-      png: 70,
+      jpeg: [0.5, 0.7],
+      png: [0.5, 0.7],
     },
   },
 
@@ -71,4 +68,4 @@ export const configs = {
   svg: {
     prefix: 'icon-',
   },
-};
+}

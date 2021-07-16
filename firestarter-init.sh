@@ -6,7 +6,7 @@
 #   2. download WordPress core using `$ wp core download`
 
 # Specify which WordPress version to download
-version="4.9.8"
+version="5.7.2"
 
 # Get current directory name
 dir_name=${PWD##*/}

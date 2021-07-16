@@ -2,10 +2,11 @@
  * @fileoverview Defines the webpack configuration to use.
  */
 
-const path = require('path');
-const webpack = require('webpack');
-const env = process.argv.indexOf('-p') !== -1 ? 'production' : 'development';
-const production = env === 'production' ? true : false;
+const path = require('path')
+const webpack = require('webpack')
+const env = process.argv.indexOf('-p') !== -1 ? 'production' : 'development'
+const production = env === 'production' ? true : false
+const sourceMap = production ? 'source-map' : 'eval'
 
 /**
  * Webpack configuration
@@ -34,9 +35,9 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
+        loader: 'babel-loader',
+      },
+    ],
   },
   optimization: {
     // splitChunks: {
@@ -54,8 +55,8 @@ module.exports = {
   plugins: [
     /** Expose compile time variables */
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(env)
-    })
+      'process.env.NODE_ENV': JSON.stringify(env),
+    }),
   ],
-  devtool: 'source-map'
-};
+  devtool: sourceMap,
+}
