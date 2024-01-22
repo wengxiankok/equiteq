@@ -1,0 +1,43 @@
+.single-expert {
+    
+    @include media-breakpoint-down(lg) {
+        padding-top: 50px;
+
+        .profile-img-container {
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+    }
+
+    .profile-img {
+        border-radius: 50%;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    .fa-map-marker {
+        color: $green;
+    }
+
+    .social-list {
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        a {
+            padding: 1rem;
+            color: black;
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+}

@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+get_header();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Boilr | A modern front-end boilerplate to kickstart your next project</title>
+$id = get_the_ID();
+$page = get_post($id);
+?>
 
-    <link rel="stylesheet" href="<?= get_bloginfo('template_url') ?>/css/main.css">
-</head>
+<section class="bg bg-dark-blue <?=strtolower($page->post_title)?>">
+    <div class="container no-pad-gutters">
+        <div class="row">
+            <div class="col-12 col-md-10">
+                <h1 class="pb-4 text-uppercase"><?php echo $page->intro_title ?></h1>
+                <h4 class="normal-font-regular"><?php echo $page->post_content ?></h4>
+            </div>
+        </div>
+    </div>
+</section>
 
-<body>
-    <h1>A modern front-end boilerplate to kickstart your next project.</h1>
-    <a href="/page2.html">Page 2</a>
-
-    <script src="<?= get_bloginfo('template_url') ?>/js/app.js" charset="utf-8"></script>
-</body>
-
-</html>
+<?php
+get_footer();

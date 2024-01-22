@@ -6,7 +6,7 @@ export const production = env === 'production'
 export const baseDir = {
   static: './static',
   src: './source',
-  dist: './public/wp-content/themes/theme2018',
+  dist: './public/wp-content/themes/equiteq',
 
   styles: {
     src: ['scss/**/*.scss', 'css/**/*.css'],

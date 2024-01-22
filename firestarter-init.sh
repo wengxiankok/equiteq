@@ -13,7 +13,7 @@ dir_name=${PWD##*/}
 
 # Define commands to execute on the server
 source_cmd="source ~/.bash_profile" # This loads the required environment variables
-cd_cmd="cd \${FOREFRONT_SITES_DIR}/$dir_name"
+cd_cmd="cd \${DIR_NAME}/$dir_name"
 download_cmd="wp core download --skip-content --version=\"${version}\""
 
 # Run the commands on the server

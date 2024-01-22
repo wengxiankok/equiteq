@@ -1,5 +1,19 @@
-h1{
-  display: flex;
-  text-align: center;
-  width: 100%;
+@import './abstract/fonts';
+
+//Overwrite Bootstrap
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255, 1.0);
+
+  &:hover {
+    color: #AFCA0B;
+  }
 }
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import './base/app';
+@import './base/hs_form';
+@import './base/grid';
+
+@import './pages/expert';
+@import './pages/single-expert';

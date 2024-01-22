@@ -13,7 +13,6 @@
  *   2. wp-config/local.php
  *   3. wp-config/development.php
  *
- * @author FOREFRONT International <support@forefront.com.my>
  */
 
 
